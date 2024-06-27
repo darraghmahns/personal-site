@@ -8,7 +8,6 @@
   text-align: center;
   background-color: var(--background-color);
   border-radius: 60px;
-  min-height: 80vh; /* Ensure the container does not cut off the footer */
   margin: 20px auto; /* Center the container with margin */
   box-sizing: border-box;
   width: 80%;
@@ -114,11 +113,18 @@ button[type="submit"]:hover {
 @media (max-width: 768px) {
   .contact-container {
     width: 95%;
+    min-height: auto; /* Adjust for mobile view */
+  }
+}
+
+@media (min-width: 769px) {
+  .contact-container {
+    min-height: auto; /* Ensure the container does not take full height */
   }
 }
 
 @media (orientation: landscape) {
   .contact-container {
-    min-height: 100vh; /* Ensure container stretches in landscape orientation */
+    min-height: auto; /* Ensure container stretches in landscape orientation */
   }
 }

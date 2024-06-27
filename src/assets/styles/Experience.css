@@ -5,6 +5,8 @@
   background-color: var(--white-color);
   border-radius: 10px;
   margin-bottom: 20px;
+  width: 75%;
+  align-self: center;
 }
 
 .experience-container h2 {
@@ -19,6 +21,7 @@
   border-radius: 30px;
   background-color: var(--background-color);
   transition: transform 0.2s ease-in-out;
+  text-align: center; /* Center align text within the experience container */
 }
 
 .experience h3 {
@@ -28,10 +31,12 @@
 
 .experience p {
   color: var(--text-color);
+  max-width: 50%;
+  margin: 0 auto; /* Center align the p element */
 }
 
 .technologies, .media {
-  text-align: left;
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -54,7 +59,14 @@
   color: var(--white-color);
 }
 
-.media img, .media video {
+.media img {
+  max-width: 30%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.media video {
   max-width: 100%;
   height: auto;
   margin-top: 10px;
@@ -91,5 +103,13 @@
 
   .video-wrapper video {
     width: 100%;
+  }
+
+  .experience-container {
+    width: 95%;
+  }
+
+  .experience p {
+    max-width: 95%;
   }
 }

@@ -15,7 +15,7 @@ const Experience: React.FC = () => {
       
       <div className="experience">
         <h3>Swimmingly Heat Sheet PDF Generator</h3>
-        <p>A tool for generating heat sheets for swimming competitions.</p>
+        <p>A tool for generating heat sheets for swimming competitions. Swimmingly is a mobile platform that lets users run swim meets on their phones rather than with a pen and paper! <a href='https://swimmingly.app/' target="_blank" rel="noopener">Here is a link to their website.</a></p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
@@ -61,7 +61,7 @@ const Experience: React.FC = () => {
       
       <div className="experience">
         <h3>Sealevel Medical File Sharing App and Website</h3>
-        <p>A secure application for sharing medical files and documents online. I founded and am building this product continuously!<a href="https://sealevel.co" target="_blank" rel="noopener noreferrer">Check it out!</a> </p>
+        <p>A secure application for sharing medical files and documents online. I founded and am building this product continuously! Website will be live soon! <a href="https://sealevel.co" target="_blank" rel="noopener noreferrer">Check it out!</a> </p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
@@ -84,7 +84,7 @@ const Experience: React.FC = () => {
       
       <div className="experience">
         <h3>This Website</h3>
-        <p>A personal resume website showcasing my skills and projects.</p>
+        <p>A personal resume website showcasing my skills and projects. Thank you for looking around. Let me know if you have any questions about anything!</p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
@@ -94,15 +94,15 @@ const Experience: React.FC = () => {
             <li>Node.js</li>
           </ul>
         </div>
-        <div className="media">
+        {/* <div className="media">
           <h4>Media:</h4>
-          {/* <img src={thisWebsiteImage} alt="This Website Project" /> */}
-        </div>
+          <img src={thisWebsiteImage} alt="This Website Project" />
+        </div> */}
       </div>
       
       <div className="experience">
         <h3>Neural Network Training with TensorFlow</h3>
-        <p>A project focused on training neural networks using TensorFlow to identify if a subject is wearing a mask or not.</p>
+        <p>A project focused on training neural networks using TensorFlow to identify if a subject is wearing a mask or not. Working on implementing a live demonstration here so stay tuned!</p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
@@ -112,10 +112,10 @@ const Experience: React.FC = () => {
             <li>NumPy</li>
           </ul>
         </div>
-        <div className="media">
+        {/* <div className="media">
           <h4>Media:</h4>
-          {/* <img src={neuralNetworkImage} alt="Neural Network Project" /> */}
-        </div>
+          <img src={neuralNetworkImage} alt="Neural Network Project" />
+        </div> */}
       </div>
       
     </section>
