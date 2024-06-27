@@ -1,0 +1,30 @@
+/* src/assets/styles/Projects.css */
+.projects-container {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.projects-container h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.project {
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: var(--background-color);
+}
+
+.project h3 {
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.project p {
+  color: var(--text-color);
+}

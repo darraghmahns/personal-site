@@ -1,0 +1,38 @@
+/* src/assets/styles/Home.css */
+.home-container {
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.profile-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-image {
+  border-radius: 30%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px;
+  transition: opacity 0.5s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.profile-image.side-image {
+  opacity: 1;
+}
+
+.profile-image.main-image {
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .profile-image.side-image {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}

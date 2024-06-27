@@ -1,0 +1,10 @@
+/* src/assets/styles/Footer.css */
+.footer-container {
+  background-color: var(--primary-color);
+  padding: 20px;
+  color: var(--white-color);
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  
+}
