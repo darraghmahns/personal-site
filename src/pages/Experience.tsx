@@ -15,7 +15,7 @@ const Experience: React.FC = () => {
       
       <div className="experience">
         <h3>Swimmingly Heat Sheet PDF Generator</h3>
-        <p>A tool for generating heat sheets for swimming competitions. Swimmingly is a mobile platform that lets users run swim meets on their phones rather than with a pen and paper! <a href='https://swimmingly.app/' target="_blank" rel="noopener">Here is a link to their website.</a></p>
+        <p>A tool for generating heat sheets for swimming competitions. Swimmingly is a mobile platform that lets users run swim meets on their phones rather than with a pen and paper! <a href='https://swimmingly.app/' target="_blank" rel="noopener noreferrer">Here is a link to their website.</a></p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
