@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
       )}
       <div className="contact-info">
         <h3>Get in Touch</h3>
-        <p>Email: <a href="mailto:darraghmahns@gmail.com">darraghmahns@gmail.com</a></p>
+        <p>Email: darraghmahns @ gmail.com</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/darraghmahns" target="_blank" rel="noopener noreferrer">darraghmahns</a></p>
       </div>
     </section>
