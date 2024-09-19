@@ -1,17 +1,49 @@
 // src/components/Header.tsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../assets/styles/Header.css';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-const Header: React.FC = () => (
-  <header className="header-container">
-    <h1>Darragh Mahns</h1>
-    <nav className="nav">
-      <Link className="nav-link" to="/">Home</Link>
-      <Link className="nav-link" to="/experience">Experience</Link>
-      <Link className="nav-link" to="/contact">Contact</Link>
-    </nav>
-  </header>
-);
+const Header: React.FC = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const handleToggle = () => {
+    setIsMobile(!isMobile);
+  };
+
+  return (
+    <header className="header-container">
+      <h1>Darragh Mahns</h1>
+      <nav className={isMobile ? "nav active" : "nav"}>
+        <NavLink 
+          end 
+          to="/" 
+          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
+          onClick={() => setIsMobile(false)}
+        >
+          Home
+        </NavLink>
+        <NavLink 
+          to="/experience" 
+          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
+          onClick={() => setIsMobile(false)}
+        >
+          Experience
+        </NavLink>
+      
+        <NavLink 
+          to="/contact" 
+          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
+          onClick={() => setIsMobile(false)}
+        >
+          Contact
+        </NavLink>
+      </nav>
+      <div className="mobile-menu-icon" onClick={handleToggle}>
+        {isMobile ? <FaTimes /> : <FaBars />}
+      </div>
+    </header>
+  );
+};
 
 export default Header;

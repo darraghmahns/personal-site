@@ -5,7 +5,7 @@ import swimminglyBefore from '../assets/videos/Swimminglybefore.mov';
 import swimminglyAfter from '../assets/videos/Swimminglyafter.mov';
 import buildSportsImage from '../assets/images/build.png';
 import sealevelImage from '../assets/images/sealevel_logo.png';
-// import thisWebsiteImage from '../assets/images/this_website.jpg';
+import thisWebsiteImage from '../assets/images/hero.jpg';
 // import neuralNetworkImage from '../assets/images/neural_network.jpg';
 
 const Experience: React.FC = () => {
@@ -81,25 +81,7 @@ const Experience: React.FC = () => {
           <img src={sealevelImage} alt="Sealevel Medical Project" />
         </div>
       </div>
-      
-      <div className="experience">
-        <h3>This Website</h3>
-        <p>A personal resume website showcasing my skills and projects. Thank you for looking around. Let me know if you have any questions about anything!</p>
-        <div className="technologies">
-          <h4>Technologies Used:</h4>
-          <ul>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>CSS</li>
-            <li>Node.js</li>
-          </ul>
-        </div>
-        {/* <div className="media">
-          <h4>Media:</h4>
-          <img src={thisWebsiteImage} alt="This Website Project" />
-        </div> */}
-      </div>
-      
+
       <div className="experience">
         <h3>Neural Network Training with TensorFlow</h3>
         <p>A project focused on training neural networks using TensorFlow to identify if a subject is wearing a mask or not. Working on implementing a live demonstration here so stay tuned!</p>
@@ -117,6 +99,26 @@ const Experience: React.FC = () => {
           <img src={neuralNetworkImage} alt="Neural Network Project" />
         </div> */}
       </div>
+      
+      <div className="experience">
+        <h3>This Website</h3>
+        <p>A personal resume website showcasing my skills and projects. Thank you for looking around. Let me know if you have any questions about anything!</p>
+        <div className="technologies">
+          <h4>Technologies Used:</h4>
+          <ul>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>CSS</li>
+            <li>Node.js</li>
+          </ul>
+        </div>
+        <div className="media">
+          <h4>Media:</h4>
+          <img src={thisWebsiteImage} alt="This Website Project" />
+        </div>
+      </div>
+      
+      
       
     </section>
   );

@@ -1,33 +1,45 @@
 /* src/assets/styles/Skills.css */
 .skills-container {
-  padding: 20px;
-  text-align: center;
-  background-color: var(--white-color);
-  border-radius: 10px;
-  margin-bottom: 20px;
+  padding: 50px 20px;
+  background-color: #007BFF;
+  margin-top: 50px;
 }
 
 .skills-container h2 {
-  margin-bottom: 10px;
-  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.skills-container ul {
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.skill-category h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.skill-category ul {
   list-style: none;
   padding: 0;
 }
 
-.skills-container li {
-  display: inline-block;
-  margin: 5px;
-  background-color: var(--secondary-color);
-  padding: 10px 15px;
-  border-radius: 5px;
-  color: var(--white-color);
+.skill-category li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.skills-container li:hover {
-  transform: scale(1.04);
-  margin-left: 8px;
+.skill-category li svg {
   margin-right: 8px;
+  color: #007BFF;
 }
