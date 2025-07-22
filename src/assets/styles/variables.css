@@ -1,9 +1,26 @@
 /* src/assets/styles/variables.css */
 :root {
-    --primary-color: #68A4F1; /* Corn flower blue */
-    --secondary-color: #2B6AD0; /* Royal Blue */
-    --accent-color: #1F4591; /* Dark blue */
-    --background-color: #000e27; /* Navy blue */
-    --text-color: #D4F1F4; /* Baby Blue */
-    --white-color: #ffffff; /* White */
-  }
+    /* Light theme colors */
+    --primary-color: #2B6AD0; /* Darker blue for better contrast */
+    --secondary-color: #1F4591; /* Even darker blue for hover */
+    --accent-color: #68A4F1; /* Lighter accent */
+    --background-color: #ffffff; /* White background for light mode */
+    --text-color: #333333; /* Dark text for light mode */
+    --card-background: #f8f9fa; /* Light card background */
+    --border-color: #e9ecef; /* Light border */
+    --header-background: #333333; /* Dark header */
+    --header-text: #ffffff; /* White header text */
+}
+
+[data-theme="dark"] {
+    /* Dark theme colors */
+    --primary-color: #68A4F1; /* Keep primary color consistent */
+    --secondary-color: #2B6AD0; /* Keep secondary color consistent */
+    --accent-color: #4A90E2; /* Lighter accent for dark mode */
+    --background-color: #0d1117; /* Dark background */
+    --text-color: #e6edf3; /* Light text for dark mode */
+    --card-background: #161b22; /* Dark card background */
+    --border-color: #30363d; /* Dark border */
+    --header-background: #010409; /* Darker header */
+    --header-text: #e6edf3; /* Light header text */
+}

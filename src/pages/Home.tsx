@@ -16,8 +16,8 @@ const Home: React.FC = () => (
     <div className="hero-section">
       <div className="hero-text">
         <h1>Hi, I'm Darragh Mahns</h1>
-        <p>Freelance Web Developer Specializing in Custom, Responsive Web Applications</p>
-        <a href="/contact" className="cta-button">Get a Free Quote</a>
+        <p>Software Engineer, Entrepreneur, Cyclist, Baker</p>
+        <a href="/contact" className="cta-button">Let's Chat!</a>
       </div>
       <img src={heroImage} alt="Web Development" className="hero-image" />
     </div>

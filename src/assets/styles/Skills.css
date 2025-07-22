@@ -1,8 +1,10 @@
 /* src/assets/styles/Skills.css */
 .skills-container {
   padding: 50px 20px;
-  background-color: #007BFF;
+  background-color: var(--primary-color);
   margin-top: 50px;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
 }
 
 .skills-container h2 {
@@ -17,9 +19,12 @@
 }
 
 .skill-category {
-  background-color: #f1f1f1;
+  background-color: var(--card-background);
   padding: 20px;
   border-radius: 8px;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .skill-category h3 {
@@ -41,5 +46,5 @@
 
 .skill-category li svg {
   margin-right: 8px;
-  color: #007BFF;
+  color: var(--primary-color);
 }

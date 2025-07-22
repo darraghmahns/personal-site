@@ -41,11 +41,14 @@
 .form-group input,
 .form-group textarea {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
   font-size: 16px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .form-group textarea {
@@ -55,7 +58,7 @@
 button[type="submit"] {
   padding: 10px 20px;
   background-color: var(--primary-color);
-  color: var(--white-color);
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
