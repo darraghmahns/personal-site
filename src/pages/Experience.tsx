@@ -1,6 +1,7 @@
 // src/pages/Experience.tsx
 import React from 'react';
 import '../assets/styles/Experience.css';
+import rerouteImage from '../assets/images/reroute.png';
 import swimminglyBefore from '../assets/videos/Swimminglybefore.mov';
 import swimminglyAfter from '../assets/videos/Swimminglyafter.mov';
 import buildSportsImage from '../assets/images/build.png';
@@ -12,6 +13,32 @@ const Experience: React.FC = () => {
   return (
     <section className="experience-container">
       <h2>Experience</h2>
+      
+      <div className="experience">
+        <h3>Reroute - AI-Powered Cycling Training Platform</h3>
+        <p>A comprehensive cycling training platform that combines AI-powered route generation, personalized training plans, performance analytics, and Strava integration. Built as a full-stack application to help cyclists optimize their training and discover new routes. <a href="https://reroute-app-828281382646.us-central1.run.app" target="_blank" rel="noopener noreferrer">Try it live here!</a></p>
+        <div className="technologies">
+          <h4>Technologies Used:</h4>
+          <ul>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>PostgreSQL</li>
+            <li>SQLAlchemy</li>
+            <li>OpenAI GPT-4</li>
+            <li>Strava API</li>
+            <li>Mapbox GL JS</li>
+            <li>GraphHopper</li>
+            <li>Google Cloud Run</li>
+          </ul>
+        </div>
+        <div className="media">
+          <h4>Media:</h4>
+          <img src={rerouteImage} alt="Reroute AI Cycling Platform" />
+        </div>
+      </div>
       
       <div className="experience">
         <h3>Swimmingly Heat Sheet PDF Generator</h3>
