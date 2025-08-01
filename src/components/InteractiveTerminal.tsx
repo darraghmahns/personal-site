@@ -1,5 +1,5 @@
 // src/components/InteractiveTerminal.tsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import '../assets/styles/InteractiveTerminal.css';
 
 interface TerminalLine {
@@ -25,7 +25,7 @@ const InteractiveTerminal: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Command sequences that will cycle through
-  const sequences: CommandSequence[] = [
+  const sequences: CommandSequence[] = useMemo(() => [
     {
       name: 'project-setup',
       lines: [
@@ -69,7 +69,7 @@ const InteractiveTerminal: React.FC = () => {
         { type: 'output', content: 'Software Engineer • USC Graduate Student • Problem Solver', delay: 800 }
       ]
     }
-  ];
+  ], []);
 
   // Available interactive commands
   const interactiveCommands: Record<string, string> = {
@@ -124,7 +124,7 @@ const InteractiveTerminal: React.FC = () => {
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [currentSequence, currentLine, isInteractive]);
+  }, [currentSequence, currentLine, isInteractive, sequences]);
 
   // Cursor blinking effect
   useEffect(() => {

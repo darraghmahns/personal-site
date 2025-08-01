@@ -116,7 +116,7 @@ const ContributionHeatmap: React.FC = () => {
 
   useEffect(() => {
     loadGitHubData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const getWeeksArray = () => {
     const weeks: ContributionDay[][] = [];

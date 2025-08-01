@@ -34,7 +34,7 @@ const Skills: React.FC = () => (
           <li><SiPostgresql /> PostgreSQL</li>
           <li><SiSqlalchemy /> SQLAlchemy</li>
           <li><SiSqlite /> SQLite</li>
-          <li><SiMysql />MySQL</li>
+          <li><SiMysql /> MySQL</li>
         </ul>
       </div>
       <div className="skill-category">
@@ -44,7 +44,7 @@ const Skills: React.FC = () => (
           <li><SiNginx /> Nginx</li>
           <li><FaGitAlt /> Git & GitHub</li>
           <li><SiDocker /> Docker</li>
-          <li><SiNetlify />Netlify</li>
+          <li><SiNetlify /> Netlify</li>
         </ul>
       </div>
       <div className="skill-category">
