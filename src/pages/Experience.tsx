@@ -1,13 +1,6 @@
 // src/pages/Experience.tsx
 import React from 'react';
 import '../assets/styles/Experience.css';
-import rerouteImage from '../assets/images/reroute.png';
-import swimminglyBefore from '../assets/videos/Swimminglybefore.mov';
-import swimminglyAfter from '../assets/videos/Swimminglyafter.mov';
-import buildSportsImage from '../assets/images/build.png';
-import sealevelImage from '../assets/images/sealevel_logo.png';
-import thisWebsiteImage from '../assets/images/hero.jpg';
-// import neuralNetworkImage from '../assets/images/neural_network.jpg';
 
 const Experience: React.FC = () => {
   return (
@@ -15,137 +8,107 @@ const Experience: React.FC = () => {
       <h2>Experience</h2>
       
       <div className="experience">
-        <h3>Reroute - AI-Powered Cycling Training Platform</h3>
-        <p>A comprehensive cycling training platform that combines AI-powered route generation, personalized training plans, performance analytics, and Strava integration. Built as a full-stack application to help cyclists optimize their training and discover new routes. <a href="https://reroute-app-828281382646.us-central1.run.app" target="_blank" rel="noopener noreferrer">Try it live here!</a></p>
-        <div className="technologies">
-          <h4>Technologies Used:</h4>
+        <div className="job-header">
+          <h3>Software Engineer Intern</h3>
+          <div className="company-info">
+            <h4>Keck Medicine of USC</h4>
+            <p className="job-type">Internship</p>
+            <p className="duration">Jan 2025 - Present · 8 mos</p>
+            <p className="location">Los Angeles, California, United States</p>
+          </div>
+        </div>
+        <div className="job-description">
           <ul>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>Tailwind CSS</li>
-            <li>Python</li>
-            <li>FastAPI</li>
-            <li>PostgreSQL</li>
-            <li>SQLAlchemy</li>
-            <li>OpenAI GPT-4</li>
-            <li>Strava API</li>
-            <li>Mapbox GL JS</li>
-            <li>GraphHopper</li>
-            <li>Google Cloud Run</li>
+            <li>Developing frontend and backend components for an admin portal of a patient scheduling application.</li>
+            <li>Building automated messaging system to facilitate communication between patients and doctors.</li>
+            <li>Integrating with Cerner API for healthcare data management and patient information retrieval.</li>
           </ul>
-        </div>
-        <div className="media">
-          <h4>Media:</h4>
-          <img src={rerouteImage} alt="Reroute AI Cycling Platform" />
-        </div>
-      </div>
-      
-      <div className="experience">
-        <h3>Swimmingly Heat Sheet PDF Generator</h3>
-        <p>A tool for generating heat sheets for swimming competitions. Swimmingly is a mobile platform that lets users run swim meets on their phones rather than with a pen and paper! <a href='https://swimmingly.app/' target="_blank" rel="noopener noreferrer">Here is a link to their website.</a></p>
-        <div className="technologies">
-          <h4>Technologies Used:</h4>
-          <ul>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>mySQL</li>
-            <li>jsPDF</li>
-            <li>Typescript</li>
-          </ul>
-        </div>
-        <div className="media">
-          <h4>Media:</h4>
-          <div className="video-container">
-            <div className="video-wrapper">
-              <h5>Before</h5>
-              <video src={swimminglyBefore} width="400" autoPlay={true} loop={true} controls={false} playsInline muted  />
-            </div>
-            <div className="video-wrapper">
-              <h5>After</h5>
-              <video src={swimminglyAfter} width="400" autoPlay={true} loop={true} controls={false} playsInline muted />
-            </div>
+          <div className="skills">
+            <h4>Skills:</h4>
+            <span className="skill-tag">React</span>
+            <span className="skill-tag">Mantine</span>
+            <span className="skill-tag">Next.js</span>
+            <span className="skill-tag">C++</span>
+            <span className="skill-tag">Cerner API</span>
+            <span className="skill-tag">Healthcare Software</span>
           </div>
         </div>
       </div>
       
       <div className="experience">
-        <h3>BUILD Sports Performance Website</h3>
-        <p>A website for a sports performance company to showcase their services and programs. I built their current one and the one before! Check them out <a href="https://buildyou.co/" target="_blank" rel="noopener noreferrer">here</a>.</p>
-        <div className="technologies">
-          <h4>Technologies Used:</h4>
-          <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>WordPress</li>
-          </ul>
+        <div className="job-header">
+          <h3>Tech Lead</h3>
+          <div className="company-info">
+            <h4>Posted Software</h4>
+            <p className="job-type">Full-time</p>
+            <p className="duration">Nov 2022 - Aug 2024 · 1 yr 10 mos</p>
+            <p className="location">Remote</p>
+          </div>
         </div>
-        <div className="media">
-          <h4>Media:</h4>
-          <img src={buildSportsImage} alt="BUILD Sports Performance Project" />
+        <div className="job-description">
+          <ul>
+            <li>Led development of mobile apps using React Native and Node.js.</li>
+            <li>Implemented secure payment processing with Stripe API.</li>
+            <li>Collaborated on features focused on data security and user engagement.</li>
+          </ul>
+          <div className="skills">
+            <h4>Skills:</h4>
+            <span className="skill-tag">Cloud Computing</span>
+            <span className="skill-tag">Program Management</span>
+            <span className="skill-tag">+8 skills</span>
+          </div>
         </div>
       </div>
       
       <div className="experience">
-        <h3>Sealevel Medical File Sharing App and Website</h3>
-        <p>A secure application for sharing medical files and documents online. I founded and am building this product continuously! Website will be live soon! <a href="https://sealevel.co" target="_blank" rel="noopener noreferrer">Check it out!</a> </p>
-        <div className="technologies">
-          <h4>Technologies Used:</h4>
+        <div className="job-header">
+          <h3>Software Developer</h3>
+          <div className="company-info">
+            <h4>Build Sports Performance Lab and Physical Therapy LLC</h4>
+            <p className="job-type">Part-time</p>
+            <p className="duration">Nov 2022 - Jun 2023 · 8 mos</p>
+            <p className="location">Louisville, Colorado, United States · On-site</p>
+          </div>
+        </div>
+        <div className="job-description">
           <ul>
-            <li>React</li>
-            <li>NodeJS</li>
-            <li>TypeScript</li>
-            <li>HTML/CSS</li>
-            <li>Python</li>
-            <li>FastAPI</li>
-            <li>Flask</li>
-            <li>Solana</li>
-            <li>AWS</li>
+            <li>Created a web application to streamline administrative tasks like class sign-ups and payments.</li>
+            <li>Redesigned file system architecture using Node.js and MySQL.</li>
+            <li>Trained staff on the new system to enhance productivity.</li>
           </ul>
+          <div className="skills">
+            <h4>Skills:</h4>
+            <span className="skill-tag">Software Engineering Practices</span>
+            <span className="skill-tag">Problem Solving</span>
+            <span className="skill-tag">+1 skill</span>
+          </div>
         </div>
-        <div className="media">
-          <h4>Media:</h4>
-          <img src={sealevelImage} alt="Sealevel Medical Project" />
-        </div>
-      </div>
-
-      <div className="experience">
-        <h3>Neural Network Training with TensorFlow</h3>
-        <p>A project focused on training neural networks using TensorFlow to identify if a subject is wearing a mask or not. Working on implementing a live demonstration here so stay tuned!</p>
-        <div className="technologies">
-          <h4>Technologies Used:</h4>
-          <ul>
-            <li>Python</li>
-            <li>TensorFlow</li>
-            <li>Jupyter Notebook</li>
-            <li>NumPy</li>
-          </ul>
-        </div>
-        {/* <div className="media">
-          <h4>Media:</h4>
-          <img src={neuralNetworkImage} alt="Neural Network Project" />
-        </div> */}
       </div>
       
       <div className="experience">
-        <h3>This Website</h3>
-        <p>A personal resume website showcasing my skills and projects. Thank you for looking around. Let me know if you have any questions about anything!</p>
-        <div className="technologies">
-          <h4>Technologies Used:</h4>
-          <ul>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>CSS</li>
-            <li>Node.js</li>
-          </ul>
+        <div className="job-header">
+          <h3>Software Engineer Intern</h3>
+          <div className="company-info">
+            <h4>Swimmingly® LLC</h4>
+            <p className="job-type">Internship</p>
+            <p className="duration">Sep 2020 - Oct 2021 · 1 yr 2 mos</p>
+            <p className="location">Denver, Colorado, United States</p>
+          </div>
         </div>
-        <div className="media">
-          <h4>Media:</h4>
-          <img src={thisWebsiteImage} alt="This Website Project" />
+        <div className="job-description">
+          <ul>
+            <li>Improved user interfaces using JavaScript, HTML5, and CSS3.</li>
+            <li>Provided technical support during events, resolving synchronization issues.</li>
+            <li>Worked with customers to identify pain points and implemented solutions.</li>
+          </ul>
+          <div className="skills">
+            <h4>Skills:</h4>
+            <span className="skill-tag">Cascading Style Sheets (CSS)</span>
+            <span className="skill-tag">Git</span>
+            <span className="skill-tag">+6 skills</span>
+          </div>
         </div>
       </div>
-      
-      
       
     </section>
   );

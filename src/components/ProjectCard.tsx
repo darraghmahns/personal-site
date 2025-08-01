@@ -9,13 +9,22 @@ interface ProjectCardProps {
   image: string;
   liveLink: string;
   repoLink: string;
+  experienceLink?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, liveLink, repoLink }) => (
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, liveLink, repoLink, experienceLink }) => (
   <div className="project-card">
     <img src={image} alt={`${title} Screenshot`} className="project-image" />
     <div className="project-details">
-      <h3>{title}</h3>
+      <h3>
+        {experienceLink ? (
+          <a href={experienceLink} style={{ textDecoration: 'none', color: 'inherit' }}>
+            {title}
+          </a>
+        ) : (
+          title
+        )}
+      </h3>
       <p>{description}</p>
       <div className="project-links">
         <a href={liveLink} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">

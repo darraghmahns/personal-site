@@ -37,7 +37,13 @@ const Header: React.FC = () => {
         >
           Experience
         </NavLink>
-      
+        <NavLink 
+          to="/projects" 
+          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
+          onClick={() => setIsMobile(false)}
+        >
+          Projects
+        </NavLink>
         <NavLink 
           to="/contact" 
           className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 

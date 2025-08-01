@@ -17,6 +17,7 @@ const Projects: React.FC = () => (
         image={rerouteImage}
         liveLink="https://reroute-app-828281382646.us-central1.run.app"
         repoLink="https://github.com/darraghmahns/ReRoute_v2"
+        experienceLink="/experience#reroute"
       />
       <ProjectCard
         title="Swimmingly Heat Sheet PDF Generator"
@@ -24,6 +25,7 @@ const Projects: React.FC = () => (
         image={heatSheetImage}
         liveLink="https://clubhouse.swimmingly.app/login"
         repoLink="https://github.com/darraghmahns/heat-sheet"
+        experienceLink="/experience#swimmingly"
       />
       <ProjectCard
         title="BUILD Sports Performance Website"
@@ -31,6 +33,7 @@ const Projects: React.FC = () => (
         image={buildSportsImage}
         liveLink="https://buildyou.co/"
         repoLink="https://github.com/darraghmahns/build-sports"
+        experienceLink="/experience#build-sports"
       />
       <ProjectCard
         title="Sealevel Medical File Sharing App and Website"
@@ -38,6 +41,7 @@ const Projects: React.FC = () => (
         image={sealevelMedicalImage}
         liveLink="https://sealevel.co."
         repoLink="https://github.com/darraghmahns/"
+        experienceLink="/experience#sealevel"
       />
     </div>
   </section>

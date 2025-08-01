@@ -1,0 +1,235 @@
+/* src/assets/styles/ContributionHeatmap.css */
+
+:root {
+  --heatmap-empty: #ebedf0;
+  --heatmap-light: #9be9a8;
+  --heatmap-medium: #40c463;
+  --heatmap-high: #30a14e;
+  --heatmap-highest: #216e39;
+}
+
+[data-theme="dark"] {
+  --heatmap-empty: #161b22;
+  --heatmap-light: #0e4429;
+  --heatmap-medium: #006d32;
+  --heatmap-high: #26a641;
+  --heatmap-highest: #39d353;
+}
+
+.contribution-heatmap {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 40px 0;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.heatmap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.heatmap-header h3 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.contribution-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  color: var(--text-color);
+  font-size: 0.9em;
+}
+
+.stat strong {
+  color: var(--primary-color);
+}
+
+.github-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.github-link:hover {
+  color: var(--secondary-color);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.heatmap-container {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.month-labels {
+  display: flex;
+  margin-bottom: 8px;
+  margin-left: 64px; /* Account for day labels width */
+}
+
+.month-label {
+  flex: 1;
+  min-width: 54px; /* Width of 4 weeks + gaps */
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.heatmap-grid {
+  display: flex;
+  gap: 3px;
+}
+
+.day-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 112px; /* 7 days * 14px + gaps */
+  margin-right: 8px;
+  min-width: 56px;
+}
+
+.day-label {
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0.7;
+  height: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.weeks-container {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contribution-day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.contribution-day:hover {
+  border-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 16px;
+  gap: 4px;
+}
+
+.legend-label {
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin: 0 4px;
+}
+
+.legend-colors {
+  display: flex;
+  gap: 3px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .contribution-heatmap {
+    padding: 16px;
+    margin: 20px 0;
+  }
+  
+  .heatmap-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .heatmap-header h3 {
+    font-size: 1.3em;
+  }
+  
+  .contribution-stats {
+    gap: 15px;
+  }
+  
+  .stat {
+    font-size: 0.85em;
+  }
+  
+  .month-labels {
+    margin-left: 48px;
+  }
+  
+  .day-labels {
+    min-width: 40px;
+    margin-right: 6px;
+  }
+  
+  .day-label {
+    font-size: 10px;
+  }
+  
+  .month-label {
+    font-size: 10px;
+    min-width: 48px;
+  }
+  
+  .contribution-day {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .legend-color {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .legend-label {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heatmap-container {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .weeks-container {
+    min-width: 600px; /* Ensure horizontal scrolling */
+  }
+}

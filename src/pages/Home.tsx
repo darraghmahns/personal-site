@@ -1,10 +1,11 @@
 // src/pages/Home.tsx
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import '../assets/styles/Home.css';
-import heroImage from '../assets/images/hero.jpg';
 import Skills from '../components/Skills'; // Import the Skills component
-import Projects from '../components/Projects'; // Import the Projects component
+import ContributionHeatmap from '../components/ContributionHeatmap';
+import InteractiveTerminal from '../components/InteractiveTerminal';
 
 const Home: React.FC = () => (
   <section className="home-container">
@@ -19,11 +20,21 @@ const Home: React.FC = () => (
         <p>Software Engineer, Entrepreneur, Cyclist, Baker</p>
         <a href="/contact" className="cta-button">Let's Chat!</a>
       </div>
-      <img src={heroImage} alt="Web Development" className="hero-image" />
+    </div>
+    
+    <div className="terminal-showcase">
+      <InteractiveTerminal />
     </div>
 
     <Skills /> {/* Add the Skills component to the Home page */}
-    <Projects /> {/* Add the Projects component to the Home page */}
+    
+    <ContributionHeatmap />
+    
+    <section className="projects-preview">
+      <h2>Some Of My Projects</h2>
+      <p>Check out some of the exciting projects I've been working on, from AI-powered cycling platforms to web applications for sports performance.</p>
+      <Link to="/projects" className="cta-button">View All Projects</Link>
+    </section>
     
   </section>
   
