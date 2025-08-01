@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
       
       <div className="project" id="reroute">
         <h3>Reroute - AI-Powered Cycling Training Platform</h3>
-        <p>A comprehensive cycling training platform that combines AI-powered route generation, personalized training plans, performance analytics, and Strava integration. Built as a full-stack application to help cyclists optimize their training and discover new routes. <a href="https://reroute-app-828281382646.us-central1.run.app" target="_blank" rel="noopener noreferrer">Try it live here!</a></p>
+        <p>A comprehensive cycling training platform that combines AI-powered route generation, personalized training plans, performance analytics, and Strava integration. Built as a full-stack application to help cyclists optimize their training and discover new routes. <a href="https://reroute.training" target="_blank" rel="noopener noreferrer">Try it live here!</a></p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
