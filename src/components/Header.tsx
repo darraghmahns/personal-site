@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../assets/styles/Header.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -16,7 +15,6 @@ const Header: React.FC = () => {
     <header className="header-container">
       <h1>Darragh Mahns</h1>
       <div className="header-controls">
-        <ThemeToggle />
         <div className="mobile-menu-icon" onClick={handleToggle}>
           {isMobile ? <FaTimes /> : <FaBars />}
         </div>

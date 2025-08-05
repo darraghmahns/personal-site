@@ -2,11 +2,23 @@
 import React from 'react';
 import '../assets/styles/Projects.css';
 import rerouteImage from '../assets/images/reroute.png';
+import rerouteLogin from '../assets/images/reroute-login.png';
+import rerouteDashboard from '../assets/images/reroute-dashboard.png';
+import rerouteRoute from '../assets/images/reroute-route.png';
+import rerouteTraining from '../assets/images/reroute-training.png';
+import rerouteChat from '../assets/images/reroute-chat.png';
+import rerouteProfile from '../assets/images/reroute-profile.png';
+import rerouteSettings from '../assets/images/reroute-settings.png';
 import swimminglyBefore from '../assets/videos/Swimminglybefore.mov';
 import swimminglyAfter from '../assets/videos/Swimminglyafter.mov';
 import buildSportsImage from '../assets/images/build.png';
-import sealevelImage from '../assets/images/sealevel_logo.png';
+import sealevelLanding from '../assets/images/sealevel-landing.png';
+import sealevelFiles from '../assets/images/sealevel-files.png';
+import sealevelUpload from '../assets/images/sealevel-upload.png';
+import sealevelAudit from '../assets/images/sealevel-audit.png';
+import sealevelPermissions from '../assets/images/sealevel-permissions.png';
 import thisWebsiteImage from '../assets/images/hero.jpg';
+import ImageCarousel from '../components/ImageCarousel';
 
 const Projects: React.FC = () => {
   return (
@@ -35,7 +47,50 @@ const Projects: React.FC = () => {
         </div>
         <div className="media">
           <h4>Media:</h4>
-          <img src={rerouteImage} alt="Reroute AI Cycling Platform" />
+          <ImageCarousel
+            images={[
+              {
+                src: rerouteImage,
+                alt: "Reroute Landing Page",
+                caption: "AI-powered cycling training platform homepage"
+              },
+              {
+                src: rerouteLogin,
+                alt: "Reroute Login",
+                caption: "Secure authentication with Strava integration"
+              },
+              {
+                src: rerouteDashboard,
+                alt: "Reroute Dashboard",
+                caption: "Personal training dashboard with performance metrics"
+              },
+              {
+                src: rerouteRoute,
+                alt: "Route Planning",
+                caption: "AI-generated route suggestions with elevation and distance"
+              },
+              {
+                src: rerouteTraining,
+                alt: "Training Plans",
+                caption: "Personalized training plans and workout scheduling"
+              },
+              {
+                src: rerouteChat,
+                alt: "AI Chat Assistant",
+                caption: "Interactive AI coach for training guidance and tips"
+              },
+              {
+                src: rerouteProfile,
+                alt: "User Profile",
+                caption: "Comprehensive profile with goals and achievements"
+              },
+              {
+                src: rerouteSettings,
+                alt: "Settings Panel",
+                caption: "Customizable preferences and account settings"
+              }
+            ]}
+          />
         </div>
       </div>
       
@@ -104,7 +159,35 @@ const Projects: React.FC = () => {
         </div>
         <div className="media">
           <h4>Media:</h4>
-          <img src={sealevelImage} alt="Sealevel Medical Project" />
+          <ImageCarousel
+            images={[
+              {
+                src: sealevelLanding,
+                alt: "Sealevel Health Landing Page",
+                caption: "Modern healthcare data management with blockchain security"
+              },
+              {
+                src: sealevelFiles,
+                alt: "File Management Dashboard",
+                caption: "Secure file management with download and sharing capabilities"
+              },
+              {
+                src: sealevelUpload,
+                alt: "Upload Health Document",
+                caption: "Simple and secure file upload interface"
+              },
+              {
+                src: sealevelAudit,
+                alt: "Blockchain Audit Trail",
+                caption: "Complete transparency with immutable blockchain audit trails"
+              },
+              {
+                src: sealevelPermissions,
+                alt: "Access Permissions Management",
+                caption: "Granular access control and permission management"
+              }
+            ]}
+          />
         </div>
       </div>
 
