@@ -10,9 +10,9 @@ import InteractiveTerminal from '../components/InteractiveTerminal';
 const Home: React.FC = () => (
   <section className="home-container">
     <Helmet>
-      <title>Darragh Mahns | Freelance Web Developer</title>
+      <title>Darragh Mahns</title>
       <meta name="description" content="Professional freelance web developer specializing in custom, responsive websites for businesses. Contact me for a free quote." />
-      <meta name="keywords" content="Freelance Web Developer, Custom Websites, Responsive Design, Web Development, Darragh Mahns, Los Angeles, LA, Culver City, Missoula" />
+      <meta name="keywords" content="Darragh Mahns, Web Development, Software Engineering, Los Angeles, LA, Culver City, Missoula" />
     </Helmet>
     <div className="hero-section">
       <div className="hero-text">
