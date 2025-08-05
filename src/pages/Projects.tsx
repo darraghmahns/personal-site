@@ -87,7 +87,7 @@ const Projects: React.FC = () => {
       
       <div className="project" id="sealevel">
         <h3>Sealevel Medical File Sharing App and Website</h3>
-        <p>A secure application for sharing medical files and documents online. I founded and am building this product continuously! Website will be live soon! <a href="https://sealevel.co" target="_blank" rel="noopener noreferrer">Check it out!</a> </p>
+        <p>A secure application for sharing medical files and documents online. I founded and am building this product continuously! <a href="https://health.darraghmahns.com" target="_blank" rel="noopener noreferrer">Check it out!</a> </p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
