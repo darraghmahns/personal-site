@@ -43,4 +43,25 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+## GitHub Contributions Integration
+
+This site can display an accurate GitHub-style contributions heatmap using the GitHub GraphQL API without exposing tokens in the browser. It works by generating a `public/contributions.json` file in CI and having the client load that file.
+
+- Client: `src/components/ContributionHeatmap.tsx` now prefers `public/contributions.json` and falls back to a lightweight REST-based estimate if missing.
+- Generator: `scripts/fetch-contributions.mjs` fetches the last 365 days via GitHub GraphQL and writes `public/contributions.json`.
+- Automation: `.github/workflows/update-contributions.yml` runs nightly and on demand to refresh the JSON and commit it.
+
+Setup steps:
+
+1. Create a GitHub fine-grained Personal Access Token (classic also works) and store it as a repository secret named `GH_CONTRIBUTIONS_TOKEN`.
+   - Minimum: no explicit scopes required for public data; to include private contribution counts, ensure your GitHub profile is set to “Include private contributions on my profile”. A personal token from your account is sufficient.
+2. Optionally set a repo variable `GITHUB_USERNAME` (defaults to `darraghmahns`).
+3. Trigger the workflow via “Run workflow” in Actions, or wait for the nightly run. This will create/update `public/contributions.json`.
+4. Deploy as usual; the client will fetch `/contributions.json` at runtime.
+
+Local development notes:
+
+- You can manually run the generator with: `GITHUB_API_TOKEN=... GITHUB_USERNAME=... node scripts/fetch-contributions.mjs`
+- Optionally set `REACT_APP_GITHUB_USERNAME` in a local `.env` for the client default profile link.
+
 To learn React, check out the [React documentation](https://reactjs.org/).

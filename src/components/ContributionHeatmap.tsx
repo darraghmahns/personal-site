@@ -16,8 +16,8 @@ const ContributionHeatmap: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Replace with your GitHub username
-  const githubUsername = 'darraghmahns';
+  // Replace with your GitHub username or set REACT_APP_GITHUB_USERNAME
+  const githubUsername = process.env.REACT_APP_GITHUB_USERNAME || 'darraghmahns';
 
   // Generate mock data - replace with real GitHub API data later
   const generateMockData = (): ContributionDay[] => {
@@ -75,21 +75,44 @@ const ContributionHeatmap: React.FC = () => {
     return data;
   };
 
-  // Load GitHub data
+  // Load contributions data (prefer prebuilt JSON from GitHub GraphQL via CI)
   const loadGitHubData = async () => {
     try {
       setLoading(true);
       setError(null);
-      
+      // First try prebuilt JSON (generated via GitHub Actions)
+      try {
+        const res = await fetch('/contributions.json', { cache: 'no-store' });
+        if (res.ok) {
+          const json = await res.json();
+          if (json && Array.isArray(json.days)) {
+            const days = json.days as ContributionDay[];
+            setContributions(days);
+            const total = days.reduce((sum, d) => sum + d.count, 0);
+            setTotalContributions(total);
+            const recent = days.slice(-7);
+            let streak = 0;
+            for (let i = recent.length - 1; i >= 0; i--) {
+              if (recent[i].count > 0) streak++; else break;
+            }
+            setCurrentStreak(streak);
+            return; // done
+          }
+        }
+      } catch (e) {
+        // Ignore and fall back
+      }
+
+      // Fallback: derive recent activity via public REST and mock older days
       const githubApi = new GitHubApiService(githubUsername);
       const data = await githubApi.generateContributionData();
-      
+
       setContributions(data);
-      
+
       // Calculate stats
       const total = data.reduce((sum, day) => sum + day.count, 0);
       setTotalContributions(total);
-      
+
       // Calculate current streak (last 7 days)
       const recent = data.slice(-7);
       let streak = 0;
