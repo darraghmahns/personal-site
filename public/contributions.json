@@ -1,18 +1,8 @@
 {
   "username": "darraghmahns",
-  "generatedAt": "2025-11-29T03:21:46.822Z",
+  "generatedAt": "2025-11-30T03:29:57.441Z",
   "totalContributions": 370,
   "days": [
-    {
-      "date": "2024-11-29",
-      "count": 0,
-      "level": 0
-    },
-    {
-      "date": "2024-11-30",
-      "count": 0,
-      "level": 0
-    },
     {
       "date": "2024-12-01",
       "count": 0,
@@ -1830,6 +1820,11 @@
     },
     {
       "date": "2025-11-29",
+      "count": 0,
+      "level": 0
+    },
+    {
+      "date": "2025-11-30",
       "count": 0,
       "level": 0
     }
