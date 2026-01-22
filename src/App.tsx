@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
@@ -26,6 +27,7 @@ const App: React.FC = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:postId" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
         <Footer />

@@ -1,11 +1,18 @@
 // src/components/Footer.tsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/Footer.css';
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const Footer: React.FC = () => (
   <footer className="footer-container">
-    <p>&copy; {new Date().getFullYear()} Darragh Mahns. All rights reserved.</p>
+    <p>
+      &copy; {new Date().getFullYear()} Darragh Mahns. All rights reserved.
+      {' | '}
+      <Link to="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>
+        Privacy Policy
+      </Link>
+    </p>
     <div className="social-links">
       <a href="https://www.linkedin.com/in/darraghmahns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <FaLinkedin />

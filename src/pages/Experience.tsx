@@ -3,6 +3,30 @@ import React from 'react';
 import '../assets/styles/Experience.css';
 
 const Experience: React.FC = () => {
+  const calculateDuration = (startDate: string): string => {
+    const start = new Date(startDate);
+    const now = new Date();
+    
+    const years = now.getFullYear() - start.getFullYear();
+    const months = now.getMonth() - start.getMonth();
+    
+    let totalMonths = years * 12 + months;
+    
+    const displayYears = Math.floor(totalMonths / 12);
+    const displayMonths = totalMonths % 12;
+    
+    let duration = '';
+    if (displayYears > 0) {
+      duration += `${displayYears} yr${displayYears > 1 ? 's' : ''}`;
+    }
+    if (displayMonths > 0) {
+      if (duration) duration += ' ';
+      duration += `${displayMonths} mo${displayMonths > 1 ? 's' : ''}`;
+    }
+    
+    return duration || '< 1 mo';
+  };
+
   return (
     <section className="experience-container">
       <h2>Experience</h2>
@@ -13,7 +37,7 @@ const Experience: React.FC = () => {
           <div className="company-info">
             <h4>Keck Medicine of USC</h4>
             <p className="job-type">Internship</p>
-            <p className="duration">Jan 2025 - Present · 8 mos</p>
+            <p className="duration">Jan 2025 - Present · {calculateDuration('2025-01-01')}</p>
             <p className="location">Los Angeles, California, United States</p>
           </div>
         </div>
