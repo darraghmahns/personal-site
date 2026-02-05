@@ -20,31 +20,24 @@ const Header: React.FC = () => {
         </div>
       </div>
       <nav className={isMobile ? "nav active" : "nav"}>
-        <NavLink 
-          end 
-          to="/" 
-          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
+        <NavLink
+          end
+          to="/"
+          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
           onClick={() => setIsMobile(false)}
         >
           Home
         </NavLink>
-        <NavLink 
-          to="/experience" 
-          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
-          onClick={() => setIsMobile(false)}
-        >
-          Experience
-        </NavLink>
-        <NavLink 
-          to="/projects" 
-          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
+        <NavLink
+          to="/projects"
+          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
           onClick={() => setIsMobile(false)}
         >
           Projects
         </NavLink>
-        <NavLink 
-          to="/contact" 
-          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
           onClick={() => setIsMobile(false)}
         >
           Contact

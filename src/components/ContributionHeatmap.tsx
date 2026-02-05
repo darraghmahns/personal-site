@@ -19,60 +19,19 @@ const ContributionHeatmap: React.FC = () => {
   // Replace with your GitHub username or set REACT_APP_GITHUB_USERNAME
   const githubUsername = process.env.REACT_APP_GITHUB_USERNAME || 'darraghmahns';
 
-  // Generate mock data - replace with real GitHub API data later
-  const generateMockData = (): ContributionDay[] => {
-    const data: ContributionDay[] = [];
-    const today = new Date();
-    const oneYear = 365;
-    
-    let total = 0;
+  // Calculate current streak from contribution data
+  const calculateStreak = (data: ContributionDay[]): number => {
     let streak = 0;
-    let streakActive = true;
-
-    for (let i = oneYear; i >= 0; i--) {
-      const date = new Date(today);
-      date.setDate(date.getDate() - i);
-      
-      // Generate realistic contribution pattern
-      const isWeekend = date.getDay() === 0 || date.getDay() === 6;
-      const randomFactor = Math.random();
-      
-      let count = 0;
-      if (!isWeekend && randomFactor > 0.3) {
-        count = Math.floor(Math.random() * 15) + 1;
-      } else if (isWeekend && randomFactor > 0.7) {
-        count = Math.floor(Math.random() * 8) + 1;
-      }
-      
-      // Simulate some busy periods (like project sprints)
-      const dayOfYear = Math.floor((date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
-      if ((dayOfYear > 50 && dayOfYear < 80) || (dayOfYear > 200 && dayOfYear < 230)) {
-        count = Math.floor(count * 1.5) + Math.floor(Math.random() * 5);
-      }
-
-      const level = count === 0 ? 0 : Math.min(Math.ceil(count / 4), 4);
-      
-      data.push({
-        date: date.toISOString().split('T')[0],
-        count,
-        level
-      });
-
-      total += count;
-      
-      // Calculate streak
-      if (i <= 7) { // Only check last week for current streak
-        if (count > 0 && streakActive) {
-          streak++;
-        } else {
-          streakActive = false;
-        }
+    // Start from most recent day and work backwards
+    for (let i = data.length - 1; i >= 0; i--) {
+      if (data[i].count > 0) {
+        streak++;
+      } else {
+        // Streak is broken
+        break;
       }
     }
-
-    setTotalContributions(total);
-    setCurrentStreak(streak);
-    return data;
+    return streak;
   };
 
   // Load contributions data (prefer prebuilt JSON from GitHub GraphQL via CI)
@@ -80,58 +39,56 @@ const ContributionHeatmap: React.FC = () => {
     try {
       setLoading(true);
       setError(null);
+
       // First try prebuilt JSON (generated via GitHub Actions)
       try {
         const res = await fetch('/contributions.json', { cache: 'no-store' });
         if (res.ok) {
           const json = await res.json();
-          if (json && Array.isArray(json.days)) {
-            const days = json.days as ContributionDay[];
+          if (json && json.weeks && Array.isArray(json.weeks)) {
+            // Transform GitHub Actions JSON format
+            const days: ContributionDay[] = [];
+            json.weeks.forEach((week: any) => {
+              week.contributionDays.forEach((day: any) => {
+                days.push({
+                  date: day.date,
+                  count: day.contributionCount,
+                  level: day.contributionCount === 0 ? 0 : Math.min(Math.ceil(day.contributionCount / 3), 4)
+                });
+              });
+            });
+
             setContributions(days);
             const total = days.reduce((sum, d) => sum + d.count, 0);
             setTotalContributions(total);
-            const recent = days.slice(-7);
-            let streak = 0;
-            for (let i = recent.length - 1; i >= 0; i--) {
-              if (recent[i].count > 0) streak++; else break;
-            }
-            setCurrentStreak(streak);
+            setCurrentStreak(calculateStreak(days));
             return; // done
           }
         }
       } catch (e) {
-        // Ignore and fall back
+        console.log('No prebuilt contributions.json found, trying GraphQL API');
       }
 
-      // Fallback: derive recent activity via public REST and mock older days
+      // Fallback 1: Try GitHub GraphQL API directly
       const githubApi = new GitHubApiService(githubUsername);
-      const data = await githubApi.generateContributionData();
+      const data = await githubApi.fetchContributionsGraphQL();
 
-      setContributions(data);
-
-      // Calculate stats
-      const total = data.reduce((sum, day) => sum + day.count, 0);
-      setTotalContributions(total);
-
-      // Calculate current streak (last 7 days)
-      const recent = data.slice(-7);
-      let streak = 0;
-      for (let i = recent.length - 1; i >= 0; i--) {
-        if (recent[i].count > 0) {
-          streak++;
-        } else {
-          break;
-        }
+      if (data.length > 0) {
+        setContributions(data);
+        const total = data.reduce((sum, day) => sum + day.count, 0);
+        setTotalContributions(total);
+        setCurrentStreak(calculateStreak(data));
+      } else {
+        // GraphQL failed (no token or error)
+        throw new Error('GraphQL API returned no data');
       }
-      setCurrentStreak(streak);
-      
+
     } catch (err) {
       console.error('Error loading GitHub data:', err);
-      setError('Failed to load GitHub data. Using sample data.');
-      
-      // Fallback to mock data
-      const mockData = generateMockData();
-      setContributions(mockData);
+      setError('Unable to load GitHub contribution data. Please ensure GITHUB_TOKEN is configured.');
+      setContributions([]);
+      setTotalContributions(0);
+      setCurrentStreak(0);
     } finally {
       setLoading(false);
     }
@@ -205,7 +162,38 @@ const ContributionHeatmap: React.FC = () => {
   };
 
   const weeks = getWeeksArray();
-  const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  // Generate dynamic month labels based on contribution data (rolling 12 months)
+  const getMonthLabels = (): string[] => {
+    if (contributions.length === 0) return [];
+
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const labels: string[] = [];
+    let currentMonth = -1;
+
+    weeks.forEach((week, weekIndex) => {
+      // Get the first valid day in this week to determine the month
+      const firstValidDay = week.find(day => day.date);
+      if (firstValidDay && firstValidDay.date) {
+        const date = new Date(firstValidDay.date);
+        const month = date.getMonth();
+
+        // Only add label if this is a new month
+        if (month !== currentMonth) {
+          labels.push(monthNames[month]);
+          currentMonth = month;
+        } else {
+          labels.push(''); // Empty label for weeks in same month
+        }
+      } else {
+        labels.push('');
+      }
+    });
+
+    return labels;
+  };
+
+  const monthLabels = getMonthLabels();
   const dayLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   if (loading) {

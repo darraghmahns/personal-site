@@ -1,11 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.4b8d8b82.css",
-    "main.js": "/static/js/main.0ffe2a65.js",
+    "main.css": "/static/css/main.0a15e24d.css",
+    "main.js": "/static/js/main.932e7696.js",
     "static/js/453.6d77a686.chunk.js": "/static/js/453.6d77a686.chunk.js",
-    "static/media/Swimminglyafter.mov": "/static/media/Swimminglyafter.f3676a6de0df72f1265a.mov",
-    "static/media/Swimminglybefore.mov": "/static/media/Swimminglybefore.33fb226eeda3d1b68667.mov",
-    "static/media/hero.jpg": "/static/media/hero.b803af6e78f6c8a7114e.jpg",
     "static/media/sealevel-files.png": "/static/media/sealevel-files.d67cdcb2266a0af6f319.png",
     "static/media/sealevel-upload.png": "/static/media/sealevel-upload.fa740e68d6850dbb04c5.png",
     "static/media/sealevel-landing.png": "/static/media/sealevel-landing.832f047cdeee0a2fc6d9.png",
@@ -19,14 +16,13 @@
     "static/media/reroute-dashboard.png": "/static/media/reroute-dashboard.a37002f0ff2c5fe46112.png",
     "static/media/reroute.png": "/static/media/reroute.0a0c2e172d4132ea4cc5.png",
     "static/media/reroute-profile.png": "/static/media/reroute-profile.e2df57aaf0eff2093560.png",
-    "static/media/build.png": "/static/media/build.11a2be2c41dcfd76e672.png",
     "index.html": "/index.html",
-    "main.4b8d8b82.css.map": "/static/css/main.4b8d8b82.css.map",
-    "main.0ffe2a65.js.map": "/static/js/main.0ffe2a65.js.map",
+    "main.0a15e24d.css.map": "/static/css/main.0a15e24d.css.map",
+    "main.932e7696.js.map": "/static/js/main.932e7696.js.map",
     "453.6d77a686.chunk.js.map": "/static/js/453.6d77a686.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b8d8b82.css",
-    "static/js/main.0ffe2a65.js"
+    "static/css/main.0a15e24d.css",
+    "static/js/main.932e7696.js"
   ]
 }
