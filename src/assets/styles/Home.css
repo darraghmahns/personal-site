@@ -6,6 +6,8 @@
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Hero Section */
@@ -17,6 +19,7 @@
 .hero-text {
   max-width: 800px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .hero-text h1 {
@@ -25,6 +28,8 @@
   margin-bottom: 16px;
   color: var(--text-color);
   line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-tagline {
@@ -32,6 +37,8 @@
   font-weight: 600;
   margin-bottom: 24px;
   color: var(--primary-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-intro {
@@ -42,6 +49,8 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-links {
@@ -182,6 +191,12 @@
 
   .hero-section {
     padding: 40px 0 var(--section-padding-mobile) 0;
+    width: 100%;
+  }
+
+  .hero-text {
+    padding: 0;
+    width: 100%;
   }
 
   .hero-text h1 {
@@ -194,6 +209,7 @@
 
   .hero-intro {
     font-size: 1rem;
+    width: 100%;
   }
 
   .hero-links {
