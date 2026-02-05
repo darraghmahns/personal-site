@@ -229,22 +229,77 @@
 }
 
 @media (max-width: 480px) {
+  .contribution-heatmap {
+    padding: 12px 8px;
+    overflow-x: hidden;
+  }
+
   .heatmap-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .heatmap-header {
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  .heatmap-header h3 {
+    font-size: 1.3em;
+  }
+
+  .contribution-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .stat {
+    font-size: 0.85em;
+  }
+
+  .heatmap-grid {
+    overflow-x: hidden;
+    padding: 0 4px;
   }
 
   .weeks-container {
-    grid-template-columns: repeat(53, minmax(8px, 1fr));
-    max-width: 100%;
+    grid-template-columns: repeat(53, minmax(0, 1fr));
+    max-width: calc(100% - 36px);
+    gap: 1.5px;
+  }
+
+  .week {
+    gap: 1.5px;
   }
 
   .contribution-day {
-    max-width: 10px;
-    max-height: 10px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 0;
+    aspect-ratio: 1;
   }
 
   .month-labels {
-    margin-left: 40px;
+    margin-left: 36px;
+    grid-template-columns: repeat(53, minmax(0, 1fr));
+    padding: 0 4px;
+  }
+
+  .day-labels {
+    min-width: 28px;
+    height: auto;
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+
+  .day-label {
+    font-size: 8px;
+    height: auto;
+  }
+
+  .heatmap-legend {
+    padding: 0 8px;
   }
 }
