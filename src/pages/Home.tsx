@@ -10,7 +10,7 @@ const Home: React.FC = () => (
   <section className="home-container">
     <Helmet>
       <title>Darragh Mahns - Full-Stack Builder</title>
-      <meta name="description" content="Full-stack software engineer focused on shipping products that solve real problems. Building everything from payment platforms to AR experiences." />
+      <meta name="description" content="Full-stack software engineer focused on creating products that solve real problems. From payment platforms to AR experiences." />
       <meta name="keywords" content="Darragh Mahns, Software Engineer, Full-Stack Developer, Product Builder, YC, Los Angeles" />
     </Helmet>
 
@@ -18,11 +18,10 @@ const Home: React.FC = () => (
     <div className="hero-section">
       <div className="hero-text">
         <h1>Darragh Mahns</h1>
-        <p className="hero-tagline">I build and ship products</p>
         <p className="hero-intro">
-          I'm a software engineer and builder focused on shipping products that solve real problems.
+          I'm a software engineer focused on creating products that solve real problems.
           Currently pursuing my MS in Computer Science at USC while working at Keck Medicine.
-          I've led technical teams, contributed to open source, and built everything from payment platforms to AR experiences.
+          I've led technical teams, contributed to open source, and developed everything from payment platforms to AR experiences.
         </p>
         <div className="hero-links">
           <a href="https://github.com/darraghmahns" target="_blank" rel="noopener noreferrer" className="hero-link">
@@ -45,7 +44,7 @@ const Home: React.FC = () => (
           <div className="timeline-content">
             <h3>Software Engineer Intern</h3>
             <p>Keck Medicine of USC</p>
-            <p className="timeline-description">Led development of data-driven healthcare admin portal with Azure AD authentication and role-based access control integrating 5 backend environments. Placed first in Keck GenAI hackathon for building HIPAA-compliant OCR solution reducing manual data entry hospital-wide.</p>
+            <p className="timeline-description">Led development of data-driven healthcare admin portal with Azure AD authentication and role-based access control integrating 5 backend environments. Placed first in Keck GenAI hackathon for developing HIPAA-compliant OCR solution reducing manual data entry hospital-wide.</p>
           </div>
         </div>
         <div className="timeline-item">

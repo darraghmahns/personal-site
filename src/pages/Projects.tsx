@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
   return (
     <section className="projects-container">
       <h2>Projects</h2>
-      <p className="projects-intro">Here are some of the products I've built and shipped:</p>
+      <p className="projects-intro">Here are some of the products I've built:</p>
 
       {/* Project 1: Unified Patient Communications Project (Keck Medicine) */}
       <div className="project" id="patient-comms">
@@ -46,7 +46,7 @@ const Projects: React.FC = () => {
       {/* Project 2: Keck GenAI Hackathon Winner - HIPAA-Compliant OCR */}
       <div className="project" id="keck-genai">
         <h3>HIPAA-Compliant OCR Solution (Hackathon Winner)</h3>
-        <p className="project-description">First-place winner at Keck GenAI hackathon. Built HIPAA-compliant OCR solution using OpenAI's ChatGPT API, Langchain, and Docling to automate manual data entry hospital-wide, reducing processing time and improving accuracy.</p>
+        <p className="project-description">First-place winner at Keck GenAI hackathon. Developed HIPAA-compliant OCR solution using OpenAI's ChatGPT API, Langchain, and Docling to automate manual data entry hospital-wide, reducing processing time and improving accuracy.</p>
         <div className="project-impact">
           <strong>Achievement:</strong> 1st Place - Keck GenAI Hackathon | <strong>Impact:</strong> Hospital-wide manual data entry reduction
         </div>
@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
         <h3>Common Crawl (Open Source Contribution)</h3>
         <p className="project-description">Open source contributions to Common Crawl Foundation's web-scale datasets infrastructure. Contributing to tools that expose complex web-scale datasets through accessible APIs, supporting researchers and developers in building responsible AI-driven applications.</p>
         <div className="project-impact">
-          <strong>Contribution:</strong> Building Java and Rust documentation and guides for accessing Common Crawl's distributed systems and columnar data
+          <strong>Contribution:</strong> Creating Java and Rust documentation and guides for accessing Common Crawl's distributed systems and columnar data
         </div>
         <div className="technologies">
           <h4>Technologies Used:</h4>
@@ -95,7 +95,7 @@ const Projects: React.FC = () => {
       {/* Project 4: G3N3RATION AR */}
       <div className="project" id="g3nar">
         <h3>G3N3RATION AR</h3>
-        <p className="project-description">Interactive AR magazine experience built with Three.js. Created immersive web-based augmented reality content for digital storytelling.</p>
+        <p className="project-description">Interactive AR magazine experience created with Three.js for immersive web-based augmented reality content and digital storytelling.</p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
@@ -118,7 +118,7 @@ const Projects: React.FC = () => {
       {/* Project 5: Reroute */}
       <div className="project" id="reroute">
         <h3>Reroute</h3>
-        <p className="project-description">AI-powered cycling route optimizer that generates personalized training routes. Built full-stack application with Strava integration, GPT-4 powered route generation, and performance analytics.</p>
+        <p className="project-description">AI-powered cycling route optimizer that generates personalized training routes. Full-stack application with Strava integration, GPT-4 powered route generation, and performance analytics.</p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
@@ -187,7 +187,7 @@ const Projects: React.FC = () => {
       {/* Project 6: SeaLevel Health */}
       <div className="project" id="sealevel">
         <h3>SeaLevel Health</h3>
-        <p className="project-description">Blockchain-based medical file sharing application built on Solana. Enables secure, decentralized patient data management with immutable audit trails and granular access control.</p>
+        <p className="project-description">Blockchain-based medical file sharing application on Solana. Enables secure, decentralized patient data management with immutable audit trails and granular access control.</p>
         <div className="technologies">
           <h4>Technologies Used:</h4>
           <ul>
@@ -244,7 +244,7 @@ const Projects: React.FC = () => {
       {/* Project 7: Standby */}
       <div className="project" id="standby">
         <h3>Standby</h3>
-        <p className="project-description">Payment platform connecting gig workers with flexible job opportunities. As Tech Lead, built payment infrastructure processing $100K+ in transactions with Stripe integration, REST APIs for payment processing and user authentication.</p>
+        <p className="project-description">Payment platform connecting gig workers with flexible job opportunities. As Tech Lead, developed payment infrastructure processing $100K+ in transactions with Stripe integration, REST APIs for payment processing and user authentication.</p>
         <div className="project-impact">
           <strong>Impact:</strong> $100K+ processed | <strong>Role:</strong> Tech Lead
         </div>
