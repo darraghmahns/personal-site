@@ -1,0 +1,75 @@
+baseURL = "https://darraghmahns.com"
+title = "Darragh Mahns"
+theme = "coder"
+languageCode = "en"
+defaultContentLanguage = "en"
+enableEmoji = true
+
+[pagination]
+pagerSize = 10
+
+[markup]
+[markup.highlight]
+noClasses = false
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+author = "Darragh Mahns"
+description = "Full-stack software engineer focused on creating products that solve real problems."
+keywords = "Darragh Mahns, Software Engineer, Full-Stack Developer, Product Builder, USC, Los Angeles"
+info = [
+  "Software Engineer",
+  "MS Computer Science @ USC",
+]
+avatarURL = "images/profile.jpg"
+dateFormat = "January 2, 2006"
+since = 2020
+colorScheme = "auto"
+hideColorSchemeToggle = false
+customCSS = []
+customSCSS = []
+customJS = []
+
+[[params.social]]
+name = "Github"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/darraghmahns"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa-brands fa-linkedin fa-2x"
+weight = 2
+url = "https://www.linkedin.com/in/darraghmahns"
+
+[[params.social]]
+name = "Email"
+icon = "fa-solid fa-envelope fa-2x"
+weight = 3
+url = "mailto:darraghmahns@gmail.com"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[[menus.main]]
+name = "About"
+weight = 1
+url = "about/"
+
+[[menus.main]]
+name = "Projects"
+weight = 2
+url = "projects/"
+
+[[menus.main]]
+name = "Blog"
+weight = 3
+url = "posts/"
+
+[[menus.main]]
+name = "Contact"
+weight = 4
+url = "contact/"
