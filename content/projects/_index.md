@@ -4,7 +4,25 @@ date: 2026-01-01
 draft: false
 ---
 
-Here are some of the products I've built:
+Some things I've built:
+
+---
+
+## NeoFuse — Kernel-Level GraphRAG for Neo4j _(Graduate Databases Project)_
+
+Custom Neo4j kernel plugin that fuses vector search, graph-aware reranking, and parallel BFS into a single native procedure (`CALL rag.retrieve`). Benchmarked on the ogbn-arxiv citation graph (169K nodes, 1.17M edges, 128-dim embeddings) against a two-Cypher-call baseline and matches or beats the two-call latency in a single round trip while selecting less-redundant graph neighborhoods. Part of a CSCI-543 team project at USC Viterbi.
+
+**Technologies:** Java, Neo4j 5.26.0, Maven, Python, HNSW vector index, Cypher, OGB (Open Graph Benchmark), Bolt driver
+**Links:** [GitHub](https://github.com/chuynh00/CS543-Spring-2026-Project2-Neo4j)
+
+---
+
+## Semantic Equivalence Across Prediction Markets _(Graduate NLP Project)_
+
+Cross-platform equivalence detector for Polymarket and Kalshi prediction market listings. Pipeline spans a 117K-market December 2025 snapshot → 473K candidate pairs (TF-IDF + Sentence-BERT hybrid retrieval) → 60K LLM-annotated labels (Qwen 2.5-14B, structured JSON schema) → fine-tuned FLAN-T5 + XGBoost ensemble, F1 = 0.70 on the held-out match class. Part of a CSCI-544 team project at USC Viterbi.
+
+**Technologies:** Python, PyTorch, Hugging Face, vLLM, Qwen 2.5-14B, FLAN-T5, XGBoost, Sentence-BERT, Colab A100
+**Links:** [GitHub](https://github.com/darraghmahns/semantic-equivalance) · [Blog post](/posts/semantic-equivalence-prediction-markets/)
 
 ---
 
@@ -17,7 +35,7 @@ Data-driven healthcare admin portal integrating 5 backend environments with Azur
 
 ---
 
-## HIPAA-Compliant OCR Solution *(Hackathon Winner)*
+## HIPAA-Compliant OCR Solution _(Hackathon Winner)_
 
 First-place winner at the Keck GenAI Hackathon. Developed a HIPAA-compliant OCR solution using OpenAI's ChatGPT API, Langchain, and Docling to automate manual data entry hospital-wide.
 
@@ -27,7 +45,7 @@ First-place winner at the Keck GenAI Hackathon. Developed a HIPAA-compliant OCR 
 
 ---
 
-## Common Crawl *(Open Source Contribution)*
+## Common Crawl _(Open Source Contribution)_
 
 Open source contributions to the Common Crawl Foundation's web-scale datasets infrastructure. Creating Java and Rust documentation and guides for accessing Common Crawl's distributed systems and columnar data.
 
