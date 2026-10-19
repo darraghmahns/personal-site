@@ -1,0 +1,16 @@
+# Darragh Mahns
+
+> Pages and WebMCP tools on https://darraghmahns.com. Use a tool when the client supports WebMCP. Otherwise open the linked page.
+
+## Key pages
+
+- [Contact](https://darraghmahns.com/contact/)
+- [Home](https://darraghmahns.com)
+
+## Tools
+
+- [Open Send Message](https://darraghmahns.com): Installed. Open the page to Send Darragh Mahns a message using the contact form. Collect the visitor’s name, email address, and message.
+- [Get Blog](https://darraghmahns.com): Installed. Look up Darragh Mahns’s blog article titles and publication dates, covering engineering projects, software, and related topics.
+- [Read articles](https://darraghmahns.com): Suggested. Looks up information. Look up articles by Darragh Mahns, including titles and publication dates.
+- [Send a message](https://darraghmahns.com/contact/): Suggested. Takes an action. Send a message to Darragh Mahns. Collect the visitor's name, email address, and message. Inputs: Name, Email, Message.
+- [Read the blog](https://darraghmahns.com): Suggested. Looks up information. Find Darragh Mahns's blog posts about engineering projects, technology, and business software, including post titles and publication dates.
