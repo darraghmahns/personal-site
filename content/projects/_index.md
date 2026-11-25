@@ -44,9 +44,9 @@ NeoFuse (csci-543 team project) registers a kernel plugin that runs ann search, 
 
 ### older / school & internships
 
-**Unified patient communications** — next.js admin portal at keck medicine (azure ad, rbac, cerner integration across five backends).
+**Unified patient communications** — next.js admin portal at keck medicine *(Jan 2025 – May 2026)* (azure ad, rbac, cerner integration across five backends).
 
-**HIPAA OCR hackathon** — first place, keck genai hackathon; langchain + docling pipeline ([backend repo](https://github.com/gleiceschaves/GENAI2-BACKEND/tree/docker)).
+**HIPAA OCR hackathon** — first place, keck genai hackathon *(Jan 2025 – May 2026)*; langchain + docling pipeline ([backend repo](https://github.com/gleiceschaves/GENAI2-BACKEND/tree/docker)).
 
 **Standby / Posted Software** — stripe payment platform, $100k+ processed ([standbyjobs.com](https://standbyjobs.com)).
 

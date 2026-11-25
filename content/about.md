@@ -30,7 +30,7 @@ Building and deploying ai agents for clients who need outcomes without hiring a 
 
 ## earlier
 
-**Software Engineer Intern** — Keck Medicine of USC *(2025)*
+**Software Engineer Intern** — Keck Medicine of USC *(Jan 2025 – May 2026)*
 
 Healthcare admin tooling with azure ad and rbac across multiple backend environments. First place in the keck genai hackathon for a hipaa-aware ocr workflow.
 
@@ -44,7 +44,7 @@ Ar web demos (three.js, react, fastapi) and tooling for swim-meet operations.
 
 ## education
 
-- **MS Computer Science** — USC *(2026)*
+- **MS Computer Science** — USC *(Jan 2025 – May 2026)*
 - **BS Computer Science** — University of Denver *(2022, cum laude)*
 
 More detail on specific builds lives on [projects](/projects/) and in the [blog](/posts/).
