@@ -12,7 +12,7 @@
 
 ## Tools
 
-- [Open Send Message](https://darraghmahns.com): Installed. Open the page to Send Darragh Mahns a message using the contact form. Collect the visitor’s name, email address, and message.
+- [Open Send Message](https://darraghmahns.com): Installed. Open the page to send Darragh Mahns a message using the contact form. Collect the visitor’s name, email address, and message.
 - [Get Blog](https://darraghmahns.com): Installed. Look up Darragh Mahns’s blog article titles and publication dates, covering engineering projects, software, and related topics.
 - [Read articles](https://darraghmahns.com): Suggested. Looks up information. Look up articles by Darragh Mahns, including titles and publication dates.
 - [Send a message](https://darraghmahns.com/contact/): Suggested. Takes an action. Send a message to Darragh Mahns. Collect the visitor's name, email address, and message. Inputs: Name, Email, Message.

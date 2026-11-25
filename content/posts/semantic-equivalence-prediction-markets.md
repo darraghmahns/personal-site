@@ -29,7 +29,7 @@ So we trashed the NBA setup and started over on the whole thing. I collected a D
 
 ## The silver labels
 
-Labeling 473,505 pairs by hand isn't on the table in a semester, so we used an LLM as the annotator. I wrote a prompt that decomposed equivalence into five boolean sub-criteria (same event, same entities, same threshold, same direction, date compatible), plus a final match/partial/not_match label and a 1 to 5 confidence score. Qwen 2.5-14B ran under vLLM on a Colab A100 with JSON-schema-constrained decoding, labeling 60,000 stratified pairs in about 110 minutes at zero marginal cost beyond GPU time (thank you google for the student colab credits).
+Labeling 473,505 pairs by hand isn't on the table in a semester, so we used an LLM as the annotator. I wrote a prompt that decomposed equivalence into five boolean sub-criteria (same event, same entities, same threshold, same direction, date compatible), plus a final match/partial/not_match label and a 1 to 5 confidence score. Qwen 2.5-14B ran under vLLM on a Colab A100 with JSON-schema-constrained decoding, labeling 60,000 stratified pairs in about 110 minutes at zero marginal cost beyond GPU time (thank you Google for the student Colab credits).
 
 I felt good about the labels. Spot-checking against Claude Sonnet 4.5 (API call not my subscription) on the top-100 pairs showed 92% binary agreement. The five-boolean schema produced rationales that looked reasonable. We then trained three verifiers on the 60K silver labels: a logistic regression, an XGBoost over engineered features, and a fine-tuned FLAN-T5-base.
 

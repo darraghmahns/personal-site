@@ -47,7 +47,7 @@ ogImage = "/images/profile.jpg"
 twitterSite = "@_mahns"
 
 [[params.social]]
-name = "Github"
+name = "GitHub"
 icon = "fa-brands fa-github fa-2x"
 weight = 1
 url = "https://github.com/darraghmahns"

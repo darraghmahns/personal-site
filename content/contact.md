@@ -5,7 +5,7 @@ date: 2026-01-01
 draft: false
 ---
 
-Best way to reach me is email or x. i read everything; i'm slowest on linkedin.
+Best way to reach me is email or X. I read everything; I'm slowest on LinkedIn.
 
 <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width: 600px;">
   <input type="hidden" name="form-name" value="contact" />
