@@ -2,7 +2,7 @@
 draft = false
 date = 2026-04-23T12:00:00-07:00
 title = "Semantic Equivalence Across Prediction Markets"
-description = "A semester of detecting equivalent listings between Polymarket and Kalshi — and what it taught me about trusting LLM-generated labels."
+description = "A semester of detecting equivalent listings between Polymarket and Kalshi, and what it taught me about trusting LLM-generated labels."
 slug = "semantic-equivalence-prediction-markets"
 authors = ["Darragh Mahns"]
 tags = ["nlp", "machine-learning", "llm", "usc"]
@@ -29,7 +29,7 @@ So we trashed the NBA setup and started over on the whole thing. I collected a D
 
 ## The silver labels
 
-Labeling 473,505 pairs by hand isn't on the table in a semester, so we used an LLM as the annotator. I wrote a prompt that decomposed equivalence into five boolean sub-criteria — same event, same entities, same threshold, same direction, date compatible — plus a final match/partial/not_match label and a 1–5 confidence score. Qwen 2.5-14B ran under vLLM on a Colab A100 with JSON-schema-constrained decoding, labeling 60,000 stratified pairs in about 110 minutes at zero marginal cost beyond GPU time (thank you google for the student colab credits).
+Labeling 473,505 pairs by hand isn't on the table in a semester, so we used an LLM as the annotator. I wrote a prompt that decomposed equivalence into five boolean sub-criteria (same event, same entities, same threshold, same direction, date compatible), plus a final match/partial/not_match label and a 1 to 5 confidence score. Qwen 2.5-14B ran under vLLM on a Colab A100 with JSON-schema-constrained decoding, labeling 60,000 stratified pairs in about 110 minutes at zero marginal cost beyond GPU time (thank you google for the student colab credits).
 
 I felt good about the labels. Spot-checking against Claude Sonnet 4.5 (API call not my subscription) on the top-100 pairs showed 92% binary agreement. The five-boolean schema produced rationales that looked reasonable. We then trained three verifiers on the 60K silver labels: a logistic regression, an XGBoost over engineered features, and a fine-tuned FLAN-T5-base.
 
@@ -43,7 +43,7 @@ What happened: the five booleans Qwen emits are tied to its final label by a mec
 
 This is a general problem with LLM-as-annotator pipelines, and I hadn't seen it flagged in quite this form before but also probably didn't do my homework well enough before setting this up. If the LLM emits both intermediate reasoning *and* a final label, and you train downstream models on the label while giving them access to the reasoning, you aren't measuring a model. You're measuring how faithfully the classifier can rediscover the annotator's rule. That's a different question, and it's always easier.
 
-The honest fix is to hold the intermediate features out of the downstream feature set. When I did, XGBoost F1 dropped from 1.00 to 0.54. That's the real baseline. The fine-tuned FLAN-T5, which only ever saw the raw market titles, landed at F1 = 0.66 — up 22% relative on the honest baseline, which is also where I'd now expect a reasonable cross-domain pipeline to sit.
+The honest fix is to hold the intermediate features out of the downstream feature set. When I did, XGBoost F1 dropped from 1.00 to 0.54. That's the real baseline. The fine-tuned FLAN-T5, which only ever saw the raw market titles, landed at F1 = 0.66, up 22% relative on the honest baseline, which is also where I'd now expect a reasonable cross-domain pipeline to sit.
 
 ## The ensemble
 

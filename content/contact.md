@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-description: "Get in touch with Darragh Mahns — email, X, LinkedIn, or GitHub. Missoula, MT; forward deployed engineer at Lattice Partners."
+description: "Get in touch with Darragh Mahns: email, X, LinkedIn, or GitHub. Missoula, MT; forward deployed engineer at Lattice Partners."
 date: 2026-01-01
 draft: false
 ---
