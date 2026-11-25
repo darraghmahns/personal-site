@@ -7,6 +7,7 @@ slug = "what-jev-could-change-about-business-software"
 authors = ["Darragh Mahns"]
 tags = ["ai", "typesafe", "jev", "engineering"]
 categories = ["writing"]
+images = ["/images/blog/what-jev-could-change-about-business-software.webp"]
 +++
 
 ![Stippled halftone artwork from TypeSafe AI's site](/images/blog/what-jev-could-change-about-business-software.webp)

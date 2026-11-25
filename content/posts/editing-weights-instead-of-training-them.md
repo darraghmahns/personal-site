@@ -7,6 +7,7 @@ slug = "editing-weights-instead-of-training-them"
 authors = ["Darragh Mahns"]
 tags = ["ai", "research", "model-weights", "engineering"]
 categories = ["writing"]
+images = ["/images/blog/editing-weights-instead-of-training-them.webp"]
 +++
 
 ![An engineer adjusts the Mark I Perceptron, an early hardware neural network, in 1960](/images/blog/editing-weights-instead-of-training-them.webp)

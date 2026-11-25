@@ -4,9 +4,17 @@ theme = "coder"
 languageCode = "en"
 defaultContentLanguage = "en"
 enableEmoji = true
+enableRobotsTXT = true
 
 [pagination]
 pagerSize = 10
+
+# Keep taxonomy URLs out of the build; they added noise in Search Console without helping discovery.
+disableKinds = ["taxonomy", "term"]
+
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
 
 [markup]
 [markup.highlight]
@@ -17,12 +25,14 @@ unsafe = true
 
 [params]
 author = "Darragh Mahns"
-description = "Full-stack software engineer focused on creating products that solve real problems."
-keywords = "Darragh Mahns, Software Engineer, Full-Stack Developer, Product Builder, USC, Los Angeles"
+description = "Forward deployed engineer in Missoula, MT. I build AI agents for non-technical companies and small businesses at Lattice Partners (AI consulting, not Lattice HR)."
+keywords = "Darragh Mahns, forward deployed engineer, AI agents, Lattice Partners, Missoula, small business automation, technical consulting"
 info = [
-  "Software Engineer",
-  "MS Computer Science @ USC",
+  "Forward Deployed Engineer @ [Lattice Partners](https://www.linkedin.com/company/lattice-partners)",
+  "Missoula, MT — AI agents for teams that are not ready for them yet",
+  "Bikes, running, and baking after 5",
 ]
+images = ["/images/profile.jpg"]
 avatarURL = "images/profile.jpg"
 dateFormat = "January 2, 2006"
 since = 2020
@@ -31,6 +41,10 @@ hideColorSchemeToggle = false
 customCSS = []
 customSCSS = []
 customJS = []
+
+[params.seo]
+ogImage = "/images/profile.jpg"
+twitterSite = "@_mahns"
 
 [[params.social]]
 name = "Github"
@@ -45,9 +59,15 @@ weight = 2
 url = "https://www.linkedin.com/in/darraghmahns"
 
 [[params.social]]
+name = "X"
+icon = "fa-brands fa-x-twitter fa-2x"
+weight = 3
+url = "https://x.com/_mahns"
+
+[[params.social]]
 name = "Email"
 icon = "fa-solid fa-envelope fa-2x"
-weight = 3
+weight = 4
 url = "mailto:darraghmahns@gmail.com"
 
 [taxonomies]

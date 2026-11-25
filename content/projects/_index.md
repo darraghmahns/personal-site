@@ -1,90 +1,53 @@
 ---
 title: "Projects"
+description: "Personal and learning projects: AI agents, document extraction, graph RAG, prediction markets, and an HTTP server built from sockets."
+keywords:
+  - AI projects
+  - forward deployed engineer portfolio
+  - Neo4j
+  - document extraction
 date: 2026-01-01
 draft: false
 ---
 
-Some things I've built:
+Selected things i've built or led. Headings are the story; details stay close to what is in the repo.
+
+## how i built document extraction with python and fastapi
+
+[DES-Demo](https://github.com/darraghmahns/DES-Demo) pulls structured fields out of pdf uploads: `extractor.py` and `processor.py` run the pipeline, `pii_scanner.py` and `verifier.py` sanity-check output before it hits the api. Live demo at [des.darraghmahns.com](https://des.darraghmahns.com).
+
+## how i built an http/1.1 server with raw python sockets
+
+[`http`](https://github.com/darraghmahns/http) is a from-scratch origin server (rfc 9112 messaging): persistent connections, chunked bodies, range requests, gzip, and virtual hosts in `server.py`, serving static files from `www/` on port 8080.
+
+## how i matched prediction markets with qwen labels and xgboost
+
+[semantic-equivalence](https://github.com/darraghmahns/semantic-equivalence) scores whether kalshi and polymarket listings describe the same event — tf-idf + sentence-bert retrieval, 60k qwen 2.5-14b labels under json schema, then flan-t5 + xgboost (f1 0.70 on the held-out match class). Team project for usc csci-544; [write-up](/posts/semantic-equivalence-prediction-markets/).
+
+## how i fused graph rag into one neo4j procedure call
+
+NeoFuse (csci-543 team project) registers a kernel plugin that runs ann search, graph-aware reranking, and parallel bfs in one `call rag.retrieve` against neo4j 5.26. Benchmarked on ogbn-arxiv (169k nodes). [Blog post](/posts/graphrag-one-round-trip/) · teammate repo [on github](https://github.com/chuynh00/CS543-Spring-2026-Project2-Neo4j).
+
+## how i built a cycling coach with gpt-4 and strava
+
+[reroute-v3](https://github.com/darraghmahns/reroute-v3) — react + fastapi app with strava oauth, mapbox, and gpt-4 generated training routes.
+
+## how i shipped ar magazine pages with three.js
+
+[g3nar](https://github.com/darraghmahns/G3NAR) — web ar for g3n3ration magazine. [Live demo](https://g3nar.onrender.com).
+
+## how i contributed docs to common crawl's java toolchain
+
+[cc-host-index](https://github.com/darraghmahns/cc-host-index) — guides and tooling around common crawl host indexes; upstream pr [cc-pyspark #96](https://github.com/commoncrawl/cc-pyspark/pull/96).
 
 ---
 
-## NeoFuse — Kernel-Level GraphRAG for Neo4j _(Graduate Databases Project)_
+### older / school & internships
 
-Custom Neo4j kernel plugin that fuses vector search, graph-aware reranking, and parallel BFS into a single native procedure (`CALL rag.retrieve`). Benchmarked on the ogbn-arxiv citation graph (169K nodes, 1.17M edges, 128-dim embeddings) against a two-Cypher-call baseline and matches or beats the two-call latency in a single round trip while selecting less-redundant graph neighborhoods. Part of a CSCI-543 team project at USC Viterbi.
+**Unified patient communications** — next.js admin portal at keck medicine (azure ad, rbac, cerner integration across five backends).
 
-**Technologies:** Java, Neo4j 5.26.0, Maven, Python, HNSW vector index, Cypher, OGB (Open Graph Benchmark), Bolt driver
-**Links:** [GitHub](https://github.com/chuynh00/CS543-Spring-2026-Project2-Neo4j)
+**HIPAA OCR hackathon** — first place, keck genai hackathon; langchain + docling pipeline ([backend repo](https://github.com/gleiceschaves/GENAI2-BACKEND/tree/docker)).
 
----
+**Standby / Posted Software** — stripe payment platform, $100k+ processed ([standbyjobs.com](https://standbyjobs.com)).
 
-## Semantic Equivalence Across Prediction Markets _(Graduate NLP Project)_
-
-Cross-platform equivalence detector for Polymarket and Kalshi prediction market listings. Pipeline spans a 117K-market December 2025 snapshot → 473K candidate pairs (TF-IDF + Sentence-BERT hybrid retrieval) → 60K LLM-annotated labels (Qwen 2.5-14B, structured JSON schema) → fine-tuned FLAN-T5 + XGBoost ensemble, F1 = 0.70 on the held-out match class. Part of a CSCI-544 team project at USC Viterbi.
-
-**Technologies:** Python, PyTorch, Hugging Face, vLLM, Qwen 2.5-14B, FLAN-T5, XGBoost, Sentence-BERT, Colab A100
-**Links:** [GitHub](https://github.com/darraghmahns/semantic-equivalance) · [Blog post](/posts/semantic-equivalence-prediction-markets/)
-
----
-
-## Unified Patient Communications Platform
-
-Data-driven healthcare admin portal integrating 5 backend environments with Azure AD authentication and role-based access control. Enables clinic staff to manage patient communications and appointments across multiple systems from a single interface.
-
-**Technologies:** Next.js, TypeScript, React, Azure AD, RBAC, Cerner API
-**Impact:** Unified 5 backend systems at Keck Medicine of USC
-
----
-
-## HIPAA-Compliant OCR Solution _(Hackathon Winner)_
-
-First-place winner at the Keck GenAI Hackathon. Developed a HIPAA-compliant OCR solution using OpenAI's ChatGPT API, Langchain, and Docling to automate manual data entry hospital-wide.
-
-**Technologies:** OpenAI ChatGPT API, Langchain, Docling, Python
-**Achievement:** 1st Place — Keck GenAI Hackathon
-**Links:** [GitHub](https://github.com/gleiceschaves/GENAI2-BACKEND/tree/docker)
-
----
-
-## Common Crawl _(Open Source Contribution)_
-
-Open source contributions to the Common Crawl Foundation's web-scale datasets infrastructure. Creating Java and Rust documentation and guides for accessing Common Crawl's distributed systems and columnar data.
-
-**Technologies:** Rust, Java, Distributed Systems, Web Crawling
-**Links:** [Pull Request](https://github.com/commoncrawl/cc-pyspark/pull/96)
-
----
-
-## G3N3RATION AR
-
-Interactive AR magazine experience created with Three.js for immersive web-based augmented reality content and digital storytelling.
-
-**Technologies:** Three.js, React, WebGL, AR.js
-**Links:** [Live Demo](https://g3nar.onrender.com) · [GitHub](https://github.com/darraghmahns/G3NAR)
-
----
-
-## Reroute
-
-AI-powered cycling route optimizer that generates personalized training routes. Full-stack application with Strava integration, GPT-4 powered route generation, and performance analytics.
-
-**Technologies:** React, FastAPI, PostgreSQL, OpenAI GPT-4, Strava API, Mapbox GL
-**Links:** [GitHub](https://github.com/darraghmahns/reroute-v3)
-
----
-
-## SeaLevel Health
-
-Blockchain-based medical file sharing application on Solana. Enables secure, decentralized patient data management with immutable audit trails and granular access control.
-
-**Technologies:** React, Node.js, Python, FastAPI, AWS, Solana
-**Links:** [Live Site](https://health.darraghmahns.com) · [GitHub](https://github.com/darraghmahns/sealevel-app)
-
----
-
-## Standby
-
-Payment platform connecting gig workers with flexible job opportunities. As Tech Lead, developed payment infrastructure processing $100K+ in transactions with Stripe integration.
-
-**Technologies:** React, Node.js, TypeScript, Stripe, PostgreSQL, REST APIs
-**Impact:** $100K+ processed
-**Links:** [Live Site](https://standbyjobs.com)
+**SeaLevel Health** — solana-based medical file sharing prototype ([health.darraghmahns.com](https://health.darraghmahns.com) · [github](https://github.com/darraghmahns/sealevel-app)).
