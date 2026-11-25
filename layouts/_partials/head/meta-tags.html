@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+{{ if .Site.Params.csp }}
+{{ partial "csp.html" . }}
+{{ end }}
+
+{{ with .Site.Params.author }}
+<meta name="author" content="{{ . }}">{{ end }}
+<meta name="description" content="{{ .Description | default (.Summary | default .Site.Params.description ) }}">
+<meta name="keywords" content="{{ (delimit .Keywords ", ") | default .Site.Params.keywords }}">
+{{ if or .Params.fediverseCreator .Site.Params.fediverseCreator }}<meta name="fediverse:creator" content="{{ .Params.fediverseCreator | default .Site.Params.fediverseCreator }}" />{{end}}
+
+{{ $images := .Params.images }}
+{{ if not $images }}
+  {{ $images = .Site.Params.images }}
+{{ end }}
+{{ if $images }}
+  <meta name="twitter:card" content="summary_large_image">
+  {{ with .Site.Params.seo.twitterSite }}<meta name="twitter:site" content="{{ . }}">{{ end }}
+  <meta name="twitter:title" content="{{ .Title | default .Site.Title }}">
+  <meta name="twitter:description" content="{{ .Description | default (.Summary | default .Site.Params.description) }}">
+  {{ range first 1 $images }}
+    <meta name="twitter:image" content="{{ . | absURL }}">
+  {{ end }}
+  <meta property="og:image" content="{{ (index $images 0) | absURL }}">
+{{ else }}
+  {{ template "_internal/twitter_cards.html" . }}
+{{ end }}
+{{ template "_internal/opengraph.html" . }}

@@ -1,8 +1,11 @@
 ---
 title: "Contact"
+description: "Get in touch with Darragh Mahns — email, X, LinkedIn, or GitHub. Missoula, MT; forward deployed engineer at Lattice Partners."
 date: 2026-01-01
 draft: false
 ---
+
+Best way to reach me is email or x. i read everything; i'm slowest on linkedin.
 
 <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width: 600px;">
   <input type="hidden" name="form-name" value="contact" />
@@ -28,6 +31,10 @@ draft: false
 
 ---
 
-**Email:** darraghmahns@gmail.com
+**Email:** [darraghmahns@gmail.com](mailto:darraghmahns@gmail.com)
 
-**LinkedIn:** [darraghmahns](https://www.linkedin.com/in/darraghmahns)
+**X:** [@_mahns](https://x.com/_mahns)
+
+**LinkedIn:** [linkedin.com/in/darraghmahns](https://www.linkedin.com/in/darraghmahns)
+
+**GitHub:** [github.com/darraghmahns](https://github.com/darraghmahns)

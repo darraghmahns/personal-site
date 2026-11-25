@@ -1,0 +1,91 @@
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Darragh Mahns",
+  "url": "https://darraghmahns.com/",
+  "image": "https://darraghmahns.com/images/profile.jpg",
+  "description": "Forward deployed engineer in Missoula, MT. I build AI agents for non-technical companies and small businesses at Lattice Partners (AI consulting, not Lattice HR).",
+  "jobTitle": "Forward Deployed Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Lattice Partners",
+    "url": "https://www.linkedin.com/company/lattice-partners"
+  },
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Missoula, Montana"
+  },
+  "sameAs": [
+    "https://github.com/darraghmahns",
+    "https://www.linkedin.com/in/darraghmahns",
+    "https://x.com/_mahns"
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Southern California",
+      "url": "https://www.usc.edu/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Denver",
+      "url": "https://www.du.edu/"
+    }
+  ]
+}
+</script>
+{{- else if eq .Section "posts" -}}
+{{- $author := index (.Params.authors | default (slice "Darragh Mahns")) 0 -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ (.Description | default .Summary) | jsonify }},
+  "datePublished": {{ (.PublishDate.Format "2006-01-02T15:04:05Z07:00") | jsonify }},
+  "dateModified": {{ (.Lastmod.Format "2006-01-02T15:04:05Z07:00") | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ $author | jsonify }}
+  },
+  "url": {{ .Permalink | jsonify }},
+  "publisher": {
+    "@type": "Person",
+    "name": "Darragh Mahns"
+  }
+  {{- with .Params.images -}}
+  ,"image": {{ (index . 0 | absURL) | jsonify }}
+  {{- end -}}
+}
+</script>
+{{- else if and (eq .Kind "page") (eq .Title "About") -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Darragh Mahns",
+  "url": "https://darraghmahns.com/about/",
+  "description": "Forward deployed engineer at Lattice Partners in Missoula, MT. I build AI agents for non-technical companies and small businesses.",
+  "jobTitle": "Forward Deployed Engineer",
+  "sameAs": [
+    "https://github.com/darraghmahns",
+    "https://www.linkedin.com/in/darraghmahns",
+    "https://x.com/_mahns"
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Southern California",
+      "url": "https://www.usc.edu/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Denver",
+      "url": "https://www.du.edu/"
+    }
+  ]
+}
+</script>
+{{- end -}}

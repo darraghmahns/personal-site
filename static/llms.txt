@@ -1,11 +1,14 @@
 # Darragh Mahns
 
-> Pages and WebMCP tools on https://darraghmahns.com. Use a tool when the client supports WebMCP. Otherwise open the linked page.
+> Forward deployed engineer at Lattice Partners (AI consulting, not Lattice HR). Builds AI agents for non-technical companies and small businesses. Based in Missoula, MT. Pages and WebMCP tools on https://darraghmahns.com.
 
 ## Key pages
 
+- [Home](https://darraghmahns.com/)
+- [About](https://darraghmahns.com/about/)
+- [Projects](https://darraghmahns.com/projects/)
+- [Blog](https://darraghmahns.com/posts/)
 - [Contact](https://darraghmahns.com/contact/)
-- [Home](https://darraghmahns.com)
 
 ## Tools
 
@@ -13,4 +16,4 @@
 - [Get Blog](https://darraghmahns.com): Installed. Look up Darragh Mahns’s blog article titles and publication dates, covering engineering projects, software, and related topics.
 - [Read articles](https://darraghmahns.com): Suggested. Looks up information. Look up articles by Darragh Mahns, including titles and publication dates.
 - [Send a message](https://darraghmahns.com/contact/): Suggested. Takes an action. Send a message to Darragh Mahns. Collect the visitor's name, email address, and message. Inputs: Name, Email, Message.
-- [Read the blog](https://darraghmahns.com): Suggested. Looks up information. Find Darragh Mahns's blog posts about engineering projects, technology, and business software, including post titles and publication dates.
+- [Read the blog](https://darraghmahns.com/posts/): Suggested. Looks up information. Find Darragh Mahns's blog posts about AI agents, engineering projects, and business software.
