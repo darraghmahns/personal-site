@@ -48,10 +48,23 @@
   .navigation .container.navigation-bar {
     padding-left: 1rem;
     padding-right: 1rem;
+    position: relative;
   }
 
   .navigation a.navigation-title--brand {
-    max-width: calc(100% - 3rem);
+    flex: 0 1 auto;
+    max-width: calc(100% - 3.25rem);
+  }
+
+  .navigation .navigation-bar > .navigation-list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    float: none !important;
+    flex: none;
+    width: 100%;
+    margin: 0;
   }
 
   .navigation #menu-toggle {
@@ -67,10 +80,11 @@
     flex: 0 0 auto;
   }
 
-  .navigation .menu-button {
+  .navigation .navigation-bar > .menu-button {
     float: none !important;
     flex: 0 0 2.5rem;
     flex-shrink: 0;
+    order: 2;
     margin: 0;
     margin-left: auto;
     padding: 0;
@@ -78,8 +92,8 @@
     line-height: 1;
   }
 
-  .navigation .navigation-list {
-    float: none !important;
+  .navigation .navigation-bar > .navigation-title--brand {
+    order: 1;
   }
 
   .navigation-title--brand .navigation-title__text {
