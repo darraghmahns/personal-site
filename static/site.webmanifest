@@ -1,0 +1,21 @@
+{
+  "name": "Darragh Mahns",
+  "short_name": "Darragh Mahns",
+  "description": "Forward deployed engineer building AI agents for non-technical companies.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FFF7EA",
+  "background_color": "#FFF7EA",
+  "display": "standalone",
+  "start_url": "/"
+}

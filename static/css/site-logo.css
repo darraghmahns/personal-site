@@ -1,0 +1,34 @@
+.navigation a.navigation-title--brand {
+  display: inline-flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: none;
+  letter-spacing: 0.02rem;
+  white-space: nowrap;
+  vertical-align: middle;
+  max-width: none;
+}
+
+.navigation-title--brand .site-logo {
+  display: inline-block !important;
+  height: 2.125rem;
+  width: 2.125rem;
+  min-width: 2.125rem;
+  max-height: 2.125rem;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+
+.colorscheme-dark .site-logo {
+  border-radius: 0.35rem;
+  background-color: #fff7ea;
+  box-shadow: 0 0 0 1px rgba(255, 247, 234, 0.12);
+}
+
+.navigation-title--brand .navigation-title__text {
+  display: inline;
+  vertical-align: middle;
+  line-height: 1;
+}

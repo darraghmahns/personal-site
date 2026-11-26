@@ -1,4 +1,7 @@
-{{/* Overrides the theme partial: only links icons that exist in static/images. */}}
-<link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/favicon-32x32.png" | relURL }}" sizes="32x32">
-<link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default "/images/favicon-16x16.png" | relURL }}" sizes="16x16">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.touchicon | default "/images/apple-touch-icon.png" | relURL }}">
+{{/* Brand icons generated from static/logo.svg */}}
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="{{ "logo.svg" | relURL }}" sizes="any">
+<link rel="icon" type="image/png" href="{{ "images/favicon-32x32.png" | relURL }}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ "images/favicon-16x16.png" | relURL }}" sizes="16x16">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
