@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Render logo SVGs into favicons, PWA icons, and default OG image."""
+"""Render logo SVGs into favicons, PWA icons, and default OG image.
+
+Run scripts/trace-brand-logo.py first when the source JPG changes.
+"""
 
 from __future__ import annotations
 

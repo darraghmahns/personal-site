@@ -1,16 +1,24 @@
-.navigation-title--brand {
-  display: inline-flex;
+.navigation a.navigation-title--brand {
+  display: inline-flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   text-transform: none;
   letter-spacing: 0.02rem;
+  white-space: nowrap;
+  vertical-align: middle;
+  max-width: none;
 }
 
-.site-logo {
-  display: block;
-  height: 2.25rem;
-  width: 2.25rem;
+.navigation-title--brand .site-logo {
+  display: inline-block !important;
+  height: 2.125rem;
+  width: 2.125rem;
+  min-width: 2.125rem;
+  max-height: 2.125rem;
   flex: 0 0 auto;
+  vertical-align: middle;
 }
 
 .colorscheme-dark .site-logo {
@@ -19,6 +27,8 @@
   box-shadow: 0 0 0 1px rgba(255, 247, 234, 0.12);
 }
 
-.navigation-title__text {
-  display: inline-block;
+.navigation-title--brand .navigation-title__text {
+  display: inline;
+  vertical-align: middle;
+  line-height: 1;
 }
