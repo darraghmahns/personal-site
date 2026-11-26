@@ -16,13 +16,13 @@ section.container.centered .about {
   text-align: center;
 }
 
-section.container.centered .home-intro {
+section.container.centered p.home-intro {
   width: 100%;
   max-width: 40rem;
   margin: 0;
   text-align: center;
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 1.1em;
+  line-height: 1.65;
   font-weight: 400;
 }
 
@@ -49,8 +49,8 @@ section.container.centered .about ul li a {
 }
 
 @media only screen and (max-width: 768px) {
-  section.container.centered .home-intro {
-    font-size: 1.05rem;
+  section.container.centered p.home-intro {
+    font-size: 1.05em;
     padding: 0 0.25rem;
   }
 }
