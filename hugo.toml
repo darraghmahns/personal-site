@@ -32,18 +32,18 @@ info = [
   "Missoula, MT. AI agents for teams that are not ready for them yet",
   "Bikes, running, and baking after 5",
 ]
-images = ["/images/profile.jpg"]
+images = ["/images/og-default.png"]
 avatarURL = "images/profile.jpg"
 dateFormat = "January 2, 2006"
 since = 2020
 colorScheme = "auto"
 hideColorSchemeToggle = false
-customCSS = []
+customCSS = ["css/site-logo.css"]
 customSCSS = []
 customJS = []
 
 [params.seo]
-ogImage = "/images/profile.jpg"
+ogImage = "/images/og-default.png"
 twitterSite = "@_mahns"
 
 [[params.social]]
