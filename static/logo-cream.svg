@@ -1,16 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Darragh Mahns logo">
   <rect width="1024" height="1024" fill="#FFF7EA"/>
   <defs>
-    <clipPath id="d-silhouette-cream">
-      <path fill-rule="evenodd" d="M224 128h184v768H224V128zm184 0h24c296 0 464 168 464 384s-168 384-464 384h-24V128zm88 112h96c232 0 336 104 336 272s-104 272-336 272h-96V240z"/>
+    <clipPath id="d-clip-cream">
+      <path
+        clip-rule="evenodd"
+        d="M 208 116 H 396 C 724 116 908 304 908 512 C 908 720 724 908 396 908 H 208 V 116 Z M 296 228 H 396 C 636 228 760 352 760 512 C 760 672 636 796 396 796 H 296 V 228 Z"
+      />
     </clipPath>
   </defs>
-  <g clip-path="url(#d-silhouette-cream)">
-    <polygon fill="#FF7D18" points="0,0 1024,0 1024,268 0,220"/>
-    <polygon fill="#E83288" points="0,220 1024,268 1024,436 0,388"/>
-    <polygon fill="#9B35D4" points="0,388 1024,436 1024,604 0,556"/>
-    <polygon fill="#4F46C8" points="0,556 1024,604 1024,772 0,724"/>
-    <polygon fill="#2563EB" points="168,780 296,540 404,640 520,520 664,612 792,468 904,560 1024,500 1024,896 0,896"/>
-    <polygon fill="#1E3A8A" points="296,540 404,640 520,520 664,612 792,468 904,560 1024,500 1024,896 0,896 0,820"/>
+  <g clip-path="url(#d-clip-cream)">
+    <path fill="#FF7D18" d="M 0 68 L 1024 124 L 1024 236 L 0 180 Z"/>
+    <path fill="#E83288" d="M 0 180 L 1024 236 L 1024 348 L 0 292 Z"/>
+    <path fill="#9B35D4" d="M 0 292 L 1024 348 L 1024 460 L 0 404 Z"/>
+    <path fill="#4F46C8" d="M 0 404 L 1024 460 L 1024 576 L 0 520 Z"/>
+    <polygon fill="#2563EB" points="0,900 0,520 168,780 296,540 404,640 520,360 664,612 792,468 904,560 1024,500 1024,900"/>
+    <polygon fill="#1E3A8A" points="296,540 404,640 520,360 664,612 792,468 904,560 1024,500 1024,900 664,900 520,720 404,640"/>
   </g>
 </svg>

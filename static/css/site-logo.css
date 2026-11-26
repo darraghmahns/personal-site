@@ -1,0 +1,24 @@
+.navigation-title--brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-transform: none;
+  letter-spacing: 0.02rem;
+}
+
+.site-logo {
+  display: block;
+  height: 2.25rem;
+  width: 2.25rem;
+  flex: 0 0 auto;
+}
+
+.colorscheme-dark .site-logo {
+  border-radius: 0.35rem;
+  background-color: #fff7ea;
+  box-shadow: 0 0 0 1px rgba(255, 247, 234, 0.12);
+}
+
+.navigation-title__text {
+  display: inline-block;
+}

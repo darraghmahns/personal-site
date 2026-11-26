@@ -1,0 +1,29 @@
+{{/*
+  Extends theme custom-styles: guard when resources.Get misses (e.g. dev server path quirks).
+*/}}
+{{ range .Site.Params.customCSS }}
+  {{ $styles := resources.Get . }}
+  {{ if $styles }}
+    {{ if hugo.IsServer }}
+      <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+    {{ else }}
+      {{ $min := $styles | resources.Minify | resources.Fingerprint }}
+      <link rel="stylesheet" href="{{ $min.RelPermalink }}" integrity="{{ $min.Data.Integrity }}" crossorigin="anonymous" media="screen">
+    {{ end }}
+  {{ else }}
+    <link rel="stylesheet" href="{{ . | relURL }}" media="screen">
+  {{ end }}
+{{ end }}
+
+{{ range .Site.Params.customSCSS }}
+  {{ if hugo.IsServer }}
+    {{ $cssOpts := dict "enableSourceMap" true }}
+    {{ with resources.Get . | toCSS $cssOpts }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" media="screen">
+    {{ end }}
+  {{ else }}
+    {{ with resources.Get . | toCSS | resources.Minify | resources.Fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" media="screen">
+    {{ end }}
+  {{ end }}
+{{ end }}
