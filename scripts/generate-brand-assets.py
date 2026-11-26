@@ -42,6 +42,9 @@ def main() -> None:
     for size, name in ((32, "favicon-32x32.png"), (16, "favicon-16x16.png")):
         svg_to_png(logo, size).save(IMAGES / name)
 
+    for size, name in ((32, "favicon-32x32-cream.png"), (16, "favicon-16x16-cream.png")):
+        svg_to_png(logo_cream, size).save(IMAGES / name)
+
     save_ico([16, 32, 48], logo, STATIC / "favicon.ico")
     save_ico([16, 32, 48], logo, IMAGES / "favicon.ico")
 

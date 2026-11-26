@@ -74,14 +74,36 @@ def trace(png_path: Path) -> str:
     return raw_svg.read_text(encoding="utf-8")
 
 
+def _luminance(hex_color: str) -> float:
+    h = hex_color.lstrip("#")
+    if len(h) != 6:
+        return 0.0
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255.0
+
+
+def _is_counter_fill(fill: str) -> bool:
+    f = fill.lower().strip()
+    if f in {"#fff", "#ffffff", "#fefefe", "#fef7e8", "#fff7ea", "#fff7e8"}:
+        return True
+    if f.startswith(("#fef", "#fff", "#ffef", "#fffe", "#f9f", "#faf")):
+        return True
+    if f.startswith("#") and len(f) == 7 and _luminance(f) > 0.92:
+        return True
+    return False
+
+
 def strip_cream_paths(svg: str) -> str:
-    """Remove any traced cream fills that survived raster prep."""
-    cream_re = re.compile(
-        r'<path[^>]*fill="(?:#(?:FFF7EA|FEF7E8|FFF[EF][0-9A-F]{3}))"[^/]*/>',
-        re.IGNORECASE,
-    )
-    svg = cream_re.sub("", svg)
-    return svg
+    """Remove cream/white counter and background fills from transparent logo."""
+
+    def drop_path(match: re.Match[str]) -> str:
+        attrs = match.group(1)
+        fill_m = re.search(r'fill="([^"]+)"', attrs, re.IGNORECASE)
+        if fill_m and _is_counter_fill(fill_m.group(1)):
+            return ""
+        return match.group(0)
+
+    return re.sub(r"<path\b([^>]*)/>", drop_path, svg, flags=re.IGNORECASE)
 
 
 def normalize_svg(svg: str, transparent: bool) -> str:

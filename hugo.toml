@@ -38,7 +38,7 @@ dateFormat = "January 2, 2006"
 since = 2020
 colorScheme = "auto"
 hideColorSchemeToggle = false
-customCSS = ["css/site-logo.css"]
+customCSS = ["css/site-logo.css", "css/home-layout.css"]
 customSCSS = []
 customJS = []
 

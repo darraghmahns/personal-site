@@ -1,2 +1,37 @@
-{{/* Manifolder analytics + WebMCP (production parity). */}}
+{{/* Sync SVG favicon when the coder theme toggles light/dark (not only prefers-color-scheme). */}}
+<script>
+(function () {
+  var lightIcon = {{ "logo.svg" | relURL | jsonify }};
+  var darkIcon = {{ "logo-cream.svg" | relURL | jsonify }};
+
+  function themeIsDark() {
+    var body = document.body;
+    if (body.classList.contains("colorscheme-dark")) {
+      return true;
+    }
+    if (body.classList.contains("colorscheme-light")) {
+      return false;
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  function syncFavicon() {
+    var link = document.querySelector("link[data-brand-favicon]");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      link.type = "image/svg+xml";
+      link.setAttribute("data-brand-favicon", "1");
+      document.head.appendChild(link);
+    }
+    link.href = themeIsDark() ? darkIcon : lightIcon;
+  }
+
+  syncFavicon();
+  document.getElementById("dark-mode-toggle")?.addEventListener("click", function () {
+    window.setTimeout(syncFavicon, 0);
+  });
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", syncFavicon);
+})();
+</script>
 <script src="https://www.manifolder.ai/webmcp-loader.js" data-key="5b9466f9-665f-4442-941f-e4bf0c65513d" defer></script>
