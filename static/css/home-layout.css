@@ -1,13 +1,19 @@
 section.container.centered {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  max-width: 40rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 section.container.centered .about {
   width: 100%;
-  max-width: 28rem;
+  max-width: 40rem;
+  text-align: center;
 }
 
 section.container.centered .home-intro {
@@ -15,50 +21,36 @@ section.container.centered .home-intro {
   max-width: 40rem;
   margin: 0;
   text-align: center;
-  font-size: 1.65rem;
-  line-height: 1.65;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
-@media only screen and (min-width: 769px) {
-  section.container.centered {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2rem 4rem;
-  }
+section.container.centered .about h1 {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
 
-  section.container.centered .home-intro {
-    flex: 1 1 22rem;
-    max-width: 34rem;
-    text-align: left;
-    padding-top: 0.5rem;
-  }
+section.container.centered .about h2 {
+  font-size: 1.2rem;
+  line-height: 1.45;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+section.container.centered .about ul {
+  margin: 1.25rem 0 0.25rem;
+}
+
+section.container.centered .about ul li a {
+  font-size: 1.35rem;
 }
 
 @media only screen and (max-width: 768px) {
-  section.container.centered .about h1 {
-    font-size: 2.2rem;
-    margin-top: 1rem;
-  }
-
-  section.container.centered .about h2 {
-    font-size: 1.2rem;
-    line-height: 1.45;
-    font-weight: 500;
-    margin-top: 0.75rem;
-  }
-
-  section.container.centered .about ul {
-    margin: 1.25rem 0 0.25rem;
-  }
-
-  section.container.centered .about ul li a {
-    font-size: 1.35rem;
-  }
-
   section.container.centered .home-intro {
-    font-size: 1.45rem;
+    font-size: 1.05rem;
     padding: 0 0.25rem;
   }
 }
