@@ -1,0 +1,56 @@
+section.container.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  max-width: 40rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.container.centered .about {
+  width: 100%;
+  max-width: 40rem;
+  text-align: center;
+}
+
+section.container.centered p.home-intro {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0;
+  text-align: center;
+  font-size: 1.15em;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+section.container.centered .about h1 {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+section.container.centered .about h2 {
+  font-size: 1.2rem;
+  line-height: 1.45;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+section.container.centered .about ul {
+  margin: 1.25rem 0 0.25rem;
+}
+
+section.container.centered .about ul li a {
+  font-size: 1.35rem;
+}
+
+@media only screen and (max-width: 768px) {
+  section.container.centered p.home-intro {
+    font-size: 1.05em;
+    padding: 0 0.25rem;
+  }
+}
